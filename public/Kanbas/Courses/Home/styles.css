@@ -1,0 +1,106 @@
+/* Flex container */
+.container {
+    display: flex;        /* Flexbox 레이아웃 사용 */
+    justify-content: flex-end; /* 요소들을 오른쪽 정렬 */
+}
+
+button, select {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin-left: 0px; /* Space between buttons is now 2px on the left */
+    cursor: pointer;
+    outline: none;
+}
+
+/* 마지막 요소에 대한 왼쪽 여백은 제거 */
+button:last-child,
+select:last-child {
+    margin-left: 0;
+}
+/* Style for the 'Collapse All' button */
+button:nth-child(1) {
+    background-color: #ffffff;
+    color: #333333;
+    border-color: #cccccc;
+}
+
+/* Style for the 'View Progress' button */
+button:nth-child(2) {
+    background-color: #ffffff;
+    color: #333333;
+    border-color: #cccccc;
+}
+
+/* Style for the 'Publish All' dropdown */
+select {
+    background-color: #ffffff;
+    color: #333333;
+    border-color: #cccccc;
+}
+
+/* Style for the 'Module' button */
+button:nth-child(4) {
+    background-color: #d9534f; /* Bootstrap 'btn-danger' color */
+    color: #ffffff;
+    border-color: #d43f3a;
+}
+
+/* Dropdown arrow customization (optional) */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,...'); /* Base64 encoded SVG of the arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 12px;
+}
+
+/* Hover styles */
+button:hover {
+    background-color: #e6e6e6;
+}
+
+button:nth-child(4):hover {
+    background-color: #c9302c; /* Darker red */
+}
+
+/* Style for button icons (if you have icons inside buttons) */
+button .icon {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Adjustments for button spacing and alignment */
+button {
+    display: inline-block; /* Align buttons in line */
+}
+
+/* Additional styles for specific button states (focus, active, etc.) may be needed based on your design requirements */
+/* Style for list items with the 'grey-box' class */
+.grey-box {
+    background-color: #f5f5f5; /* Light grey background */
+    margin-bottom: 8px; /* Space between list items */
+    padding: 10px; /* Padding inside the grey box */
+    border-radius: 4px; /* Rounded corners for the grey box */
+}
+
+/* Style for links within 'grey-box' class */
+.grey-box a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Set text color for links */
+    display: block; /* Make the links fill the entire list item area for easier clicking */
+}
+
+/* Hover effect for list items with 'grey-box' class */
+.grey-box:hover {
+    background-color: #e0e0e0; /* Slightly darker grey background on hover */
+}
+h4, h5 {
+    display: inline-block; /* 옆으로 배치 */
+    margin-right: 10px; /* 옆으로 간격을 줌 */
+    vertical-align: top; /* 상단 정렬 */
+}
