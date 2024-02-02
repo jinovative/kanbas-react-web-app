@@ -6,55 +6,89 @@
     <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="/Kanbas/styles.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet"/>
 
     <link rel="stylesheet" href="/Kanbas/styles.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Home/styles.css" />
-<style>
-  @media (max-width: 1200px) {
-    .second-column-class
-   {
-    display: none;
-  }
-}
-
-@media (max-width: 992px) {
-  .wd-kanbas-navigation,
-  .third-column-class 
-  {
-    display: none;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .module-column-class 
-{
-  display: block; /* 블록 레벨 요소로 설정 */
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .module-column-class 
-{
-  display: block; /* 블록 레벨 요소로 설정 */
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-</style>
 
     <title>Home module</title>
 </head>
 <body>
+    <header id="mobile-header" class="no-print">
+      <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" hidden>
+      <label for="sidebar-toggle" class="sidebar-toggle-btn">
+          <i class="fa fa-bars"></i>
+      </label>
+      <label for="sidebar-toggle" class="sidebar-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+      <nav id="sidebar" class="sidebar">
+          <ul>
+            <br><br>
+            <li>
+              <a href="/Kanbas/Dashboard/screen.html">
+              <i class="fa fa-tachometer"></i> Dashboard</a>
+            </li>
+            <li><a href="/Kanbas/Account/Profile/screen.html">
+              <i class="fa fa-user"></i>Account</a>
+            </li>
+            <li class="wd-active"><a href="/Kanbas/Courses/Home/screen.html">
+              <i class="fa fa-book"></i>Courses</a>
+            </li>
+            <li><a href="#">
+              <i class="fa fa-calendar"></i> Calendar</a></li>
+            <li><a href="#">
+              <i class="fa-solid fa-inbox fa"></i>Inbox</a></li>
+            <li><a href="#">
+              <i class="fa-regular fa-clock"></i>History</a></li>
+            <li><a href="#">
+              <i class="fa-solid fa-folder-tree"></i>Studio</a></li>
+            <li><a href="#">
+              <i class="fa-solid fa-right-from-bracket"></i>Commons</a></li>
+            <li><a href="#">
+              <i class="fa-regular fa-circle-question"></i>Help</a></li>
+          </ul>
+      </nav>
+
+      <div class="mobile-header-title expandable" aria-expanded="false">
+        <div>CS5610.12631.202410</div>
+        <div>Modules</div>
+      </div>
+
+      <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle" hidden>
+      <label for="dropdown-toggle" class="dropdown-toggle-btn">
+        <i class="fa-solid fa-glasses"></i>
+        <i class="fa-solid fa-chevron-down"></i> 
+      </label>
+      <label for="dropdown-toggle" class="dropdown-close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+      <nav id="dropdown-menu" class="dropdown-menu">
+          <ul>
+            <li class="wd-active">
+              <a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+            <li>
+              <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+            </li>
+            <li><a href="http://piazza.com">Piazza</a></li>
+            <li><a href="#">Zoom</a></li>
+            <li>
+              <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+            </li>
+            <li><a href="#">Quizzes</a></li>
+            <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+            <li><a href="#">People</a></li>
+            <li><a href="/Kanbas/Courses/Settings/screen.html">Setting</a></li>
+          </ul>
+      </nav>
+  </header>
+  
     <table>
         <tr>
           <tr>
             <td valign="top" rowspan="2">
-              <ul class="wd-kanbas-navigation">
+              <ul class="wd-kanbas-navigation d-none d-lg-block">
                 <li><a href="http://northeastern.edu">N</a></li>
                 <li><a href="/Kanbas/Account/Profile/screen.html">
                   <i class="fa fa-user"></i>Account</a>
@@ -68,27 +102,37 @@
                 </li>
                 <li><a href="#">
                   <i class="fa fa-calendar"></i> Calendar</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
+                <li><a href="#">
+                  <i class="fa-solid fa-inbox fa-2xl"></i><br>Inbox</a></li>
+                <li><a href="#">
+                  <i class="fa-regular fa-clock"></i>History</a></li>
+                <li><a href="#">
+                  <i class="fa-solid fa-folder-tree"></i>Studio</a></li>
+                <li><a href="#">
+                  <i class="fa-solid fa-right-from-bracket"></i>Commons</a></li>
+                <li><a href="#">
+                  <i class="fa-regular fa-circle-question"></i><br>Help</a></li>
               </ul>
             </td>
-            <td valign="top" class="course-module-header" colspan="2">
-              <div class="header-content">
+            <td valign="top" class="course-module-header d-none d-md-flex justify-content-between" colspan="2">
+              <div class="header-content d-flex align-items-center">
                 <i class="fa fa-bars"></i>
-                <a href="/Kanbas/Courses/Modules/screen.html" class="course-link">WEB DEV</a>
-                <span class="divider">></span>
-                <span class="module-name">Modules</span>
+                <a href="/Kanbas/Courses/Modules/screen.html" class="course-link mx-2">CS5610.12631.202410</a>
+                <span class="divider mx-2">></span>
+                <span class="module-name mx-2">Modules</span>
               </div>
-              <div>
-                <button type="button">Student Mode</button>
+              <div class="d-flex justify-content-between">
+                <button type="button" class="d-flex align-items-center">
+                  <i class="fa-regular fa-user mx-2"></i>
+                  <span>Student Mode</span>
+                </button>
               </div>
             </td>
+            
+            
           </tr>
             <td valign = "top" class="wd-navigation">
-              <ul class="wd-navigation third-column-class">
+              <ul class="wd-navigation third-column-class d-none d-lg-block">
                 <li class="wd-active">
                   <a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
                 <li>
@@ -273,7 +317,7 @@
                         </td>
                       </ul>
                           <td>
-                            <ul class="second-column-class">
+                            <ul class="second-column-class d-none d-xl-block">
                             <div class="flex-grow-0 me-2 d-none d-lg-block" style="width: 250px">
                               <h4>Course Status</h4>
                               <div class="button-group">
@@ -302,9 +346,7 @@
                                   <a href="#" class="todo-title">Grade A1 - ENV + HTML</a><button type="button" class="btn-close" aria-label="Close"></button><br>
                                   <span class="todo-points">100 points</span>
                                   <span class="todo-due-date">Sep 18 at 11:59pm</span>
-                                  
                                 </li>
-                                <!-- More list items as needed -->
                               </ul>
                                 </div>
                               </li>

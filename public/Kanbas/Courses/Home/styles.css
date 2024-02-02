@@ -1,108 +1,97 @@
 /* Flex container */
 .container {
-    display: flex;        /* Flexbox 레이아웃 사용 */
-    justify-content: flex-end; /* 요소들을 오른쪽 정렬 */
+  display: flex;
+  justify-content: flex-end;
 }
 
-button, select {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    padding: 6px 12px;
-    margin-left: 0px; /* Space between buttons is now 2px on the left */
-    cursor: pointer;
-    outline: none;
+button,
+select {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin-left: 0px;
+  cursor: pointer;
+  outline: none;
 }
 
-/* 마지막 요소에 대한 왼쪽 여백은 제거 */
 button:last-child,
 select:last-child {
-    margin-left: 0;
+  margin-left: 0;
 }
-/* Style for the 'Collapse All' button */
+
 button:nth-child(1) {
-    background-color: #ffffff;
-    color: #333333;
-    border-color: #cccccc;
+  background-color: #ffffff;
+  color: #333333;
+  border-color: #cccccc;
 }
 
-/* Style for the 'View Progress' button */
 button:nth-child(2) {
-    background-color: #ffffff;
-    color: #333333;
-    border-color: #cccccc;
+  background-color: #ffffff;
+  color: #333333;
+  border-color: #cccccc;
 }
 
-/* Style for the 'Publish All' dropdown */
 select {
-    background-color: #ffffff;
-    color: #333333;
-    border-color: #cccccc;
+  background-color: #ffffff;
+  color: #333333;
+  border-color: #cccccc;
 }
 
-/* Style for the 'Module' button */
 button:nth-child(4) {
-    background-color: #d9534f; /* Bootstrap 'btn-danger' color */
-    color: #ffffff;
-    border-color: #d43f3a;
+  background-color: #d9534f;
+  color: #ffffff;
+  border-color: #d43f3a;
 }
 
-/* Dropdown arrow customization (optional) */
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,...'); /* Base64 encoded SVG of the arrow */
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px 12px;
 }
 
-/* Hover styles */
 button:hover {
-    background-color: #e6e6e6;
+  background-color: #e6e6e6;
 }
 
 button:nth-child(4):hover {
-    background-color: #c9302c; /* Darker red */
+  background-color: #c9302c;
 }
 
-/* Style for button icons (if you have icons inside buttons) */
 button .icon {
-    margin-right: 5px; /* Space between icon and text */
+  margin-right: 5px;
 }
 
-/* Adjustments for button spacing and alignment */
 button {
-    display: inline-block; /* Align buttons in line */
+  display: inline-block;
 }
 
-/* Additional styles for specific button states (focus, active, etc.) may be needed based on your design requirements */
-/* Style for list items with the 'grey-box' class */
 .grey-box {
-    background-color: #f5f5f5; /* Light grey background */
-    margin-bottom: 8px; /* Space between list items */
-    padding: 10px; /* Padding inside the grey box */
-    border-radius: 4px; /* Rounded corners for the grey box */
+  background-color: #f5f5f5;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 4px;
 }
 
-/* Style for links within 'grey-box' class */
 .grey-box a {
-    text-decoration: none; /* Remove underline from links */
-    color: #333; /* Set text color for links */
-    display: block; /* Make the links fill the entire list item area for easier clicking */
+  text-decoration: none;
+  color: #333;
+  display: block;
 }
 
-/* Hover effect for list items with 'grey-box' class */
 .grey-box:hover {
-    background-color: #e0e0e0; /* Slightly darker grey background on hover */
+  background-color: #e0e0e0;
 }
-h4, h5 {
-    display: inline-block; /* 옆으로 배치 */
-    margin-right: 10px; /* 옆으로 간격을 줌 */
-    vertical-align: top; /* 상단 정렬 */
+h4,
+h5 {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: top;
 }
 .wd-modules,
 .wd-modules * {
@@ -137,200 +126,380 @@ h4, h5 {
   margin-bottom: 20px;
 }
 .collapse-checkbox {
-    display: none; /* 체크박스 숨기기 */
-  }
-  
-  .collapse-label {
-    cursor: pointer; /* 라벨에 마우스 커서 변경 */
-  }
-  
-  .collapse-content {
-    display: none; /* 기본적으로 내용 숨기기 */
-  }
-  
-  .collapse-checkbox:checked + .collapse-label + .collapse-content {
-    display: block; /* 체크박스가 체크되면 내용 표시 */
-  }
-  
+  display: none;
+}
 
-/* Coming Up 타이틀과 캘린더 링크가 있는 헤더 섹션 */
+.collapse-label {
+  cursor: pointer;
+}
+
+.collapse-content {
+  display: none;
+}
+
+.collapse-checkbox:checked + .collapse-label + .collapse-content {
+  display: block;
+}
+
 .header-section {
-    border-bottom: 1px solid #ddd; /* 얇은 구분선 추가 */
-    padding-bottom: 10px; /* 구분선과 내용 사이의 간격을 주기 위한 패딩 */
-    margin-bottom: 10px; /* 다음 섹션과의 간격을 주기 위한 마진 */
-  }
-  
-  /* 기존 스타일에 추가될 내용 */
-  .lecture-title {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.lecture-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lecture-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.view-calendar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.footer-link {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.course-status {
+  background-color: #fff;
+  border-radius: 8px;
+
+  padding: 15px;
+  width: 250px;
+}
+
+.course-status h4 {
+  margin-bottom: 15px;
+}
+
+.status-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.status-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background-color: #f2f2f2;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.status-item i {
+  width: 20px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.status-item:hover {
+  background-color: #e9e9e9;
+}
+.status-btn {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.status-btn:last-child {
+  margin-right: 0;
+}
+
+.status-btn.publish-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-btn:hover {
+  filter: brightness(90%);
+}
+
+.button-group {
+  display: flex;
+  justify-content: start;
+}
+
+.status-btn {
+  padding: 0.375rem 0.2rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.unpublish-btn {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.publish-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+.course-module-header {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.course-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.divider {
+  margin: 0 5px;
+}
+
+.module-name {
+  color: #000;
+}
+tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.course-module-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left-content {
+  display: flex;
+  align-items: center;
+}
+
+table {
+  margin: 0;
+  width: 100%;
+}
+
+td {
+  padding: 0;
+}
+
+.your-td-class {
+  width: 12%;
+  box-sizing: border-box;
+  padding: 0;
+  margin-left: 0;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.nav-toggle:checked + .toggle-label + .menu {
+  max-height: 500px;
+}
+
+#mobile-header {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
+
+.mobile-header-hamburger,
+.mobile-header-arrow {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.mobile-header-title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+@media (max-width: 770px) {
+  #mobile-header {
     display: flex;
-    align-items: center;
-    gap: 5px; /* 아이콘과 타이틀 사이의 간격 */
   }
-  
-  .lecture-info {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .list-group-item {
-    border: none; /* Bootstrap의 기본 border 제거 */
-  }
-  
-  .view-calendar-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px; /* 아이콘과 텍스트 사이의 간격 */
-  }
-  
-  .footer-link {
-    border-top: 1px solid #ddd; /* 얇은 구분선 추가 */
-    padding-top: 10px; /* 구분선과 내용 사이의 간격을 주기 위한 패딩 */
-    margin-top: 10px; /* 이전 섹션과의 간격을 주기 위한 마진 */
-  }
-  .course-status {
-    background-color: #fff; /* 배경색 */
-    border-radius: 8px; /* 모서리 둥글게 */
+}
 
-    padding: 15px; /* 패딩 */
-    width: 250px; /* 너비 */
-  }
-  
-  .course-status h4 {
-    margin-bottom: 15px; /* 제목 아래 여백 */
-  }
-  
-  .status-btn {
-    display: block; /* 블록 레벨 요소로 표시 */
-    width: 100%; /* 부모 너비만큼 */
-    margin-bottom: 10px; /* 버튼 사이 여백 */
-    /* 버튼 스타일링 */
-  }
-  
-  .status-list {
-    list-style: none; /* 리스트 불릿 제거 */
-    padding: 0; /* 패딩 제거 */
-    margin: 0; /* 마진 제거 */
-  }
-  
-  .status-item {
-    display: flex; /* 플렉스 박스 */
-    align-items: center; /* 아이템 세로 중앙 정렬 */
-    padding: 10px; /* 패딩 */
-    border-radius: 4px; /* 모서리 둥글게 */
-    margin-bottom: 8px; /* 아이템 사이 여백 */
-    background-color: #f2f2f2; /* 배경색 */
-    color: #333; /* 글자색 */
-    text-decoration: none; /* 링크 밑줄 제거 */
-    transition: background-color 0.2s; /* 배경색 변화 애니메이션 */
-  }
-  
-  .status-item i {
-    width: 20px; /* 아이콘 너비 */
-    margin-right: 10px; /* 아이콘과 텍스트 사이 여백 */
-    text-align: center; /* 아이콘 가운데 정렬 */
-  }
-  
-  .status-item:hover {
-    background-color: #e9e9e9; /* 호버 시 배경색 변경 */
-  }
-  .status-btn {
-    display: inline-block; /* 버튼을 인라인 블록으로 표시 */
-    /* 기타 스타일링 ... */
-    margin-right: 5px; /* 버튼 사이 간격 */
-  }
-  
-  /* 마지막 버튼의 오른쪽 여백을 제거 */
-  .status-btn:last-child {
-    margin-right: 0;
-  }
-  
- 
-
-  .status-btn.publish-btn {
-    background-color: #28a745; /* 초록색 배경 */
-    color: white; /* 흰색 텍스트 */
-    /* 기타 스타일링 ... */
-  }
-  
-  /* 버튼 호버 효과 */
-  .status-btn:hover {
-    filter: brightness(90%); /* 버튼을 약간 어둡게 */
-  }
-  
-  .button-group {
-    display: flex; /* Flexbox를 사용하여 버튼들을 한 줄에 배치 */
-    justify-content: start; /* 버튼들을 컨테이너의 시작 부분에 정렬 */
-  }
-  
-  .status-btn {
-    padding: 0.375rem 0.2rem; /* Bootstrap에서 사용하는 버튼 패딩 */
-    border: 1px solid transparent; /* 버튼 테두리 설정 */
-    border-radius: 0.25rem; /* 버튼의 모서리 둥글게 */
-    font-size: 1rem; /* 텍스트 크기 */
-    line-height: 1.5; /* 텍스트 라인 높이 */
-    cursor: pointer; /* 마우스 오버 시 커서 변경 */
-    /* 추가적인 스타일링... */
-  }
-  
-  .unpublish-btn {
-    background-color: #ffc107; /* Bootstrap warning 색상 */
-    color: #212529; /* 텍스트 색상 */
-  }
-  
-  .publish-btn {
-    background-color: #28a745; /* Bootstrap success 색상 */
-    color: #fff; /* 텍스트 색상 */
-  }
+@media (max-width: 767.98px) {
   .course-module-header {
-    font-size: 16px; /* Adjust font size as needed */
-    font-weight: bold; /* Make text bold */
-    margin-bottom: 15px; /* Add space below the header */
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Align items vertically */
+    display: none;
   }
-  
-  .course-link {
-    color: #000; /* Set link color */
-    text-decoration: none; /* Remove underline */
-  }
-  
-  .divider {
-    margin: 0 5px; /* Add horizontal space around the divider */
-  }
-  
-  .module-name {
-    color: #000; /* Set text color for module name */
-  }
-  tr {
-    border-bottom: 1px solid #ddd; /* 각 행의 하단에 실선 추가 */
-  }
+}
 
-  .course-module-header {
-    display: flex; /* Flexbox 레이아웃 사용 */
-    justify-content: space-between; /* 요소들을 양 끝으로 정렬 */
-    align-items: center; /* 요소들을 수직 중앙에 위치시킴 */
-  }
-  
-  .header-left-content {
-    display: flex; /* 헤더 왼쪽 콘텐츠를 수평으로 배치 */
-    align-items: center; /* 콘텐츠를 수직으로 중앙 정렬 */
-  }
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  color: white;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  z-index: 1000;
+  overflow-y: auto;
+}
 
-  table {
-    margin: 0; /* 테이블의 마진 제거 */
-    width: 100%; /* 테이블의 너비를 부모 요소에 맞게 조정 */
-    /* 기타 스타일링 조정 */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 10px;
+  color: red;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: grey;
+}
+
+.sidebar-toggle-btn,
+.sidebar-close-btn {
+  position: fixed;
+  z-index: 1001;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.sidebar-toggle-btn {
+  top: 10px;
+  left: 10px;
+}
+
+.sidebar-close-btn {
+  display: none;
+  top: 10px;
+  right: 20%;
+  color: grey;
+}
+
+.sidebar-toggle:checked ~ .sidebar {
+  transform: translateX(0);
+}
+
+.sidebar-toggle:checked ~ .sidebar-close-btn {
+  display: block;
+}
+
+.sidebar-toggle:checked ~ .sidebar-toggle-btn {
+  display: none;
+}
+
+.dropdown-toggle-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 2000;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.dropdown-toggle:checked ~ .dropdown-menu {
+  display: block;
+  animation: slideDown 0.3s ease-out forwards;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.dropdown-close-btn {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 2000;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+}
+
+.dropdown-toggle:checked ~ .dropdown-close-btn {
+  display: block;
+}
+.dropdown-toggle:checked ~ .dropdown-toggle-btn {
+  display: none;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+    top: 10px;
   }
-  
-  td {
-    padding: 0; /* 셀의 패딩 제거 */
-    /* 기타 스타일링 조정 */
+  to {
+    opacity: 1;
+    transform: translateY(60px);
+    top: 0;
   }
-  
-  .your-td-class {
-    width: 12%; /* 부모 요소인 <td>의 전체 너비를 차지하도록 설정 */
-  box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
-  padding: 0; /* 내부 여백 제거 */
-  margin-left: 0; /* 외부 여백 제거 */
-  }
-  
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu ul li a {
+  display: block;
+  padding: 15px;
+  color: red;
+  text-decoration: none;
+}
+
+.dropdown-menu ul li a:hover {
+  background-color: white;
+}
