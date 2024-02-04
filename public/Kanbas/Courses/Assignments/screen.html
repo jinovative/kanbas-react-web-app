@@ -1,183 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/Kanbas/styles.css" />
-    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/Kanbas/styles.css" />
+        <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="/Kanbas/styles.css" />
-    <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+        <link rel="stylesheet" href="/Kanbas/styles.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
 
-    <title>Document</title>
-</head>
-<body>
-    <table>
-        <tr>
-            <td valign = "top">
-              <ul class="wd-kanbas-navigation">
-                <li><a href="http://northeastern.edu">N</a></li>
-                <li><a href="/Kanbas/Account/Profile/screen.html">
-                  <i class="fa fa-user"></i>Account</a>
-                </li>
-                <li>
-                  <a href="/Kanbas/Dashboard/screen.html">
-                  <i class="fa fa-tachometer"></i> Dashboard</a>
-                </li>
-                <li class="wd-active"><a href="/Kanbas/Courses/Home/screen.html">
-                  <i class="fa fa-book"></i>Courses</a>
-                </li>
-                <li><a href="#">
-                  <i class="fa fa-calendar"></i> Calendar</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-              </ul>
-            <td valign = "top">
-              <ul class="wd-navigation">
-                <li>
-                  <a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
-                <li>
-                  <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-                </li>
-                <li><a href="http://piazza.com">Piazza</a></li>
-                <li><a href="#">Zoom</a></li>
-                <li class="wd-active">
-                  <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
-                </li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="/Kanbas/Courses/Settings/screen.html">Setting</a></li>
-              </ul>
-            </td>
-            <td valign = "top">
-                <table>
-                    <tbody>
-                        <input type="text" placeholder="Search for Assignments" />
-                        <button>Group</button>
-                        <button>Assignment</button>
-                        <select>
-                          <option value="Dates">Edit Assignment Dates</option>
-                        </select>
-                     
-                     
-                        <h3>
-                          ASSIGNMENTS 40% of Total
-                          <select style="width: 150px">
-                            <option value="option1">Edit</option>
-                            <option value="option2">Speed Grader</option>
-                            <option value="option3">Duplicate</option>
-                            <option value="option4">Delete</option>
-                            <option value="option5">Move To...</option>
-                            <option value="option6">Send To...</option>
-                            <option value="option7">Copy to...</option>
-                            <option value="option8">Share to Commons</option>
-                          </select>
-                        </h3>
-                        <ul>
-                          <li><a href="/Kanbas/Courses/Assignments/Edit/screen.html">A1 - ENV + HTML</a></li>
-                          <a href="Module">Multiple Modules</a>
-                          | Not available yet
-                          <li><a href="/Kanbas/Courses/Assignments/Edit/screen.html">A2 - CSS + BOOTSTRAP</a></li>
-                          <a href="Module">Multiple Modules</a>
-                          | Not available yet
-                          <li><a href="/Kanbas/Courses/Assignments/Edit/screen.html">A3 - JS + REACT</a></li>
-                          <a href="Module">Multiple Modules</a>
-                          | Not available yet
-                          <li><a href="/Kanbas/Courses/Assignments/Edit/screen.html">A4 - STATE + REDUX</a></li>
-                          <a href="Module">Multiple Modules</a>
-                          | Not available yet
-                          <li><a href="/Kanbas/Courses/Assignments/Edit/screen.html">A5 - NODE + SESSION</a></li>
-                          <a href="Module">Multiple Modules</a>
-                          | Not available yet
-                          <li><a href="/Kanbas/Courses/Assignments/Edit/screen.html">A6 - MONGO + MONGOOSE</a></li>
-                          <a href="Module">Multiple Modules</a>
-                          | Not available yet
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <header>
+                    <div class="col-auto p-0">
+                        <ul class="wd-kanbas-navigation">
+                            <ul class="wd-kanbas-navigation d-none d-lg-block">
+                                <li><a href="http://northeastern.edu">N</a></li>
+                                <li>
+                                    <a href="/Kanbas/Account/Profile/screen.html"> <i class="fa fa-user"></i>Account</a>
+                                </li>
+                                <li>
+                                    <a href="/Kanbas/Dashboard/screen.html">
+                                        <i class="fa fa-tachometer"></i> Dashboard</a
+                                    >
+                                </li>
+                                <li class="wd-active">
+                                    <a href="/Kanbas/Courses/Home/screen.html"> <i class="fa fa-book"></i>Courses</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-calendar"></i> Calendar</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-inbox fa-2xl"></i><br />Inbox</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-regular fa-clock"></i>History</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-folder-tree"></i>Studio</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-right-from-bracket"></i>Commons</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-regular fa-circle-question"></i><br />Help</a>
+                                </li>
+                            </ul>
                         </ul>
-                     
-                     
-                        <h3>
-                          QUIZZES 10% of Total
-                          <select style="width: 150px">
-                            <option value="option1">Edit</option>
-                            <option value="option2">Speed Grader</option>
-                            <option value="option3">Duplicate</option>
-                            <option value="option4">Delete</option>
-                            <option value="option5">Move To...</option>
-                            <option value="option6">Send To...</option>
-                            <option value="option7">Copy to...</option>
-                            <option value="option8">Share to Commons</option>
-                          </select>
-                        </h3>
-                        <ul>
-                          <li><a href="/Kanbas/Courses/Quizzes/Edit/screen.html">Q1 - HTML</a></li>
-                          <a href="Module">Multiple Modules</a>
-                          | Not available yet
-                          <li><a href="/Kanbas/Courses/Quizzes/Edit/screen.html">Q2 - CSS</a></li>
-                          <a href="Module">Multiple Modules</a>
-                          | Not available yet
-                          <li><a href="/Kanbas/Courses/Quizzes/Edit/screen.html">Q3 - JS, ES6</a></li>
-                          <a href="Module">Multiple Modules</a>
-                          | Not available yet
-                          <li><a href="/Kanbas/Courses/Quizzes/Edit/screen.html">NODE</a></li>
-                          <a href="Module">Multiple Modules</a>
-                          | Not available yet
-                          <li><a href="/Kanbas/Courses/Quizzes/Edit/screen.html">Q5 - MONGO</a></li>
-                          <a href="Module">Multiple Modules</a>
-                          | Not available yet
-                        </ul>
-                     
-                     
-                        <h3>
-                          EXAMS 20% of Total
-                          <select style="width: 150px">
-                            <option value="option1">Edit</option>
-                            <option value="option2">Speed Grader</option>
-                            <option value="option3">Duplicate</option>
-                            <option value="option4">Delete</option>
-                            <option value="option5">Move To...</option>
-                            <option value="option6">Send To...</option>
-                            <option value="option7">Copy to...</option>
-                            <option value="option8">Share to Commons</option>
-                          </select>
-                        </h3>
-                        <ul>
-                          <li><a href="https://www.lipsum.com">Midterm</a></li>
-                          <a href="https://www.lipsum.com">Multiple Modules</a>
-                          | Not available yet
-                          <li><a href="https://www.lipsum.com">Final</a></li>
-                          <a href="https://www.lipsum.com">Multiple Modules</a>
-                          | Not available yet
-                        </ul>
-                     
-                     
-                        <h3>
-                          PROJECT 30% of Total
-                          <select style="width: 150px">
-                            <option value="option1">Edit</option>
-                            <option value="option2">Speed Grader</option>
-                            <option value="option3">Duplicate</option>
-                            <option value="option4">Delete</option>
-                            <option value="option5">Move To...</option>
-                            <option value="option6">Send To...</option>
-                            <option value="option7">Copy to...</option>
-                            <option value="option8">Share to Commons</option>
-                          </select>
-                        </h3>
-                        <ul>
-                          <li><a href="https://www.lipsum.com">Project</a></li>
-                          <a href="https://www.lipsum.com">Multiple Modules</a>
-                          | Not available yet
-                        </ul>
-                    </tbody>
-                  </table>
-            </td>
-        </tr>
-    </table>
-</body>
+                    </div>
+                </header>
+                <div class="row col-10">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center justify-content-between p-2 w-100">
+                            <div>
+                                <button class="menu-toggle btn btn-link">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                                <span>CS4550.16321.20410</span> <span>&gt;</span> <span>Assignments</span>
+                            </div>
+                            <form class="ms-auto">
+                                <button class="btn btn-primary">Student View</button>
+                            </form>
+                        </div>
+                        <hr class="separator-line" />
+                    </div>
+
+                    <div class="row">
+                        <div class="d-none d-md-block p-3">
+                            <ul class="wd-navigation">
+                                <li>
+                                    <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                                </li>
+                                <li><a href="http://piazza.com">Piazza</a></li>
+                                <li><a href="#">Zoom</a></li>
+                                <li class="wd-active">
+                                    <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                                </li>
+                                <li><a href="#">Quizzes</a></li>
+                                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                                <li><a href="#">People</a></li>
+                                <li><a href="/Kanbas/Courses/Settings/screen.html">Setting</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-auto">
+                            <input type="text" placeholder="Search for Assignments" />
+                            <button>Group</button>
+                            <button>Assignment</button>
+                            <select>
+                                <option value="Dates">Edit Assignment Dates</option>
+                            </select>
+                            <h3>
+                                ASSIGNMENTS 40% of Total
+                                <select style="width: 150px">
+                                    <option value="option1">Edit</option>
+                                    <option value="option2">Speed Grader</option>
+                                    <option value="option3">Duplicate</option>
+                                    <option value="option4">Delete</option>
+                                    <option value="option5">Move To...</option>
+                                    <option value="option6">Send To...</option>
+                                    <option value="option7">Copy to...</option>
+                                    <option value="option8">Share to Commons</option>
+                                </select>
+                            </h3>
+                            <ul>
+                                <li><a href="/Kanbas/Courses/Assignments/Edit/screen.html">A1 - ENV + HTML</a></li>
+                                <a href="Module">Multiple Modules</a>
+                                | Not available yet
+                                <li><a href="/Kanbas/Courses/Assignments/Edit/screen.html">A2 - CSS + BOOTSTRAP</a></li>
+                                <a href="Module">Multiple Modules</a>
+                                | Not available yet
+                                <li><a href="/Kanbas/Courses/Assignments/Edit/screen.html">A3 - JS + REACT</a></li>
+                                <a href="Module">Multiple Modules</a>
+                                | Not available yet
+                                <li><a href="/Kanbas/Courses/Assignments/Edit/screen.html">A4 - STATE + REDUX</a></li>
+                                <a href="Module">Multiple Modules</a>
+                                | Not available yet
+                                <li><a href="/Kanbas/Courses/Assignments/Edit/screen.html">A5 - NODE + SESSION</a></li>
+                                <a href="Module">Multiple Modules</a>
+                                | Not available yet
+                                <li>
+                                    <a href="/Kanbas/Courses/Assignments/Edit/screen.html">A6 - MONGO + MONGOOSE</a>
+                                </li>
+                                <a href="Module">Multiple Modules</a>
+                                | Not available yet
+                            </ul>
+                            <h3>
+                                QUIZZES 10% of Total
+                                <select style="width: 150px">
+                                    <option value="option1">Edit</option>
+                                    <option value="option2">Speed Grader</option>
+                                    <option value="option3">Duplicate</option>
+                                    <option value="option4">Delete</option>
+                                    <option value="option5">Move To...</option>
+                                    <option value="option6">Send To...</option>
+                                    <option value="option7">Copy to...</option>
+                                    <option value="option8">Share to Commons</option>
+                                </select>
+                            </h3>
+                            <ul>
+                                <li><a href="/Kanbas/Courses/Quizzes/Edit/screen.html">Q1 - HTML</a></li>
+                                <a href="Module">Multiple Modules</a>
+                                | Not available yet
+                                <li><a href="/Kanbas/Courses/Quizzes/Edit/screen.html">Q2 - CSS</a></li>
+                                <a href="Module">Multiple Modules</a>
+                                | Not available yet
+                                <li><a href="/Kanbas/Courses/Quizzes/Edit/screen.html">Q3 - JS, ES6</a></li>
+                                <a href="Module">Multiple Modules</a>
+                                | Not available yet
+                                <li><a href="/Kanbas/Courses/Quizzes/Edit/screen.html">NODE</a></li>
+                                <a href="Module">Multiple Modules</a>
+                                | Not available yet
+                                <li><a href="/Kanbas/Courses/Quizzes/Edit/screen.html">Q5 - MONGO</a></li>
+                                <a href="Module">Multiple Modules</a>
+                                | Not available yet
+                            </ul>
+                            <h3>
+                                EXAMS 20% of Total
+                                <select style="width: 150px">
+                                    <option value="option1">Edit</option>
+                                    <option value="option2">Speed Grader</option>
+                                    <option value="option3">Duplicate</option>
+                                    <option value="option4">Delete</option>
+                                    <option value="option5">Move To...</option>
+                                    <option value="option6">Send To...</option>
+                                    <option value="option7">Copy to...</option>
+                                    <option value="option8">Share to Commons</option>
+                                </select>
+                            </h3>
+                            <ul>
+                                <li><a href="https://www.lipsum.com">Midterm</a></li>
+                                <a href="https://www.lipsum.com">Multiple Modules</a>
+                                | Not available yet
+                                <li><a href="https://www.lipsum.com">Final</a></li>
+                                <a href="https://www.lipsum.com">Multiple Modules</a>
+                                | Not available yet
+                            </ul>
+                            <h3>
+                                PROJECT 30% of Total
+                                <select style="width: 150px">
+                                    <option value="option1">Edit</option>
+                                    <option value="option2">Speed Grader</option>
+                                    <option value="option3">Duplicate</option>
+                                    <option value="option4">Delete</option>
+                                    <option value="option5">Move To...</option>
+                                    <option value="option6">Send To...</option>
+                                    <option value="option7">Copy to...</option>
+                                    <option value="option8">Share to Commons</option>
+                                </select>
+                            </h3>
+                            <ul>
+                                <li><a href="https://www.lipsum.com">Project</a></li>
+                                <a href="https://www.lipsum.com">Multiple Modules</a>
+                                | Not available yet
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
