@@ -30,51 +30,18 @@
 .wd-modules > li {
     margin-bottom: 20px;
 }
-.container-fluid {
-    max-width: 100%;
-}
-
-.ic-app-nav-toggle-and-crumbs {
-    background-color: #f8f9fa; /* Light grey background for visibility */
-    padding: 10px; /* Add some padding around the content */
-    border-bottom: 2px solid #dee2e6; /* Add a bottom border for separation */
-}
-
-.wd-kanbas-navigation,
-.wd-navigation {
-    list-style: none; /* Remove default list styling */
-    padding-left: 0; /* Remove default padding */
-}
-
-.wd-kanbas-navigation li,
-.wd-navigation li {
-    padding: 5px 0; /* Add some vertical padding to each list item */
-}
-
-.nav-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 40px;
-    padding: 10px 0;
-}
-
-.menu-toggle {
-    border: none;
-    background-color: transparent;
-    color: red;
-    font-size: 80px;
-    cursor: pointer;
-}
-
-.student-view {
-    border: transparent;
-    cursor: pointer;
-}
-
 .separator-line {
-    border: none;
-    height: 1px;
-    background-color: #ccc;
-    margin: 0;
+    margin-top: 10px;
+}
+.badge-outline {
+    padding: 3px;
+    background-color: transparent;
+    border: 1px solid #6c757d; /* 아웃라인 색상 설정 */
+    color: #6c757d; /* 텍스트 색상 설정 */
+    border-radius: 10px; /* 모서리 곡률 추가 */
+    font-size: 0.8em; /* 폰트 사이즈 조절 */
+}
+a {
+    color: black; /* 모든 링크의 텍스트 색상을 검정색으로 설정 */
+    text-decoration: none; /* 모든 링크의 밑줄 제거 */
 }

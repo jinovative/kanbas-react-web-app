@@ -1,0 +1,24 @@
+.scrollable-table-container {
+    width: 50%; /* Set to 100% of parent container width */
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+.fixed-width-table {
+    width: 1200px; /* Set a fixed width for the table */
+}
+.score-input {
+    width: 60px; /* Set a fixed width for input fields */
+    text-align: center;
+}
+.fixed-size-container {
+    width: 100%; /* Adjust width as needed */
+    height: 400px; /* Set a fixed height for the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+.table-wrapper {
+    display: block; /* Make the table wrapper a block element */
+}
+.scrollable-tbody {
+    display: block; /* Make the tbody a block element */
+    max-height: 350px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
