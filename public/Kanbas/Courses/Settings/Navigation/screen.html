@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag and Drop Page</title>
+<style>
+    .draggable-item {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    cursor: move;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .drag-handle {
+        cursor: grab;
+    }
+
+    .drop-zone {
+        padding: 10px;
+        background-color: #ffffff;
+        border: 1px dashed #000000;
+        width: 350px;
+    }
+    .button-container a {
+            margin-right:10px;
+        }
+
+        .button-container a:last-child {
+            margin-right: 700px;
+        }
+</style>
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        var draggedElement = document.getElementById(data);
+
+
+        if (ev.target.className.includes("drop-zone")) {
+            ev.target.appendChild(draggedElement);
+        } else if (ev.target.className.includes("draggable-item")) {
+            var targetParent = ev.target.parentNode;
+            targetParent.insertBefore(draggedElement, ev.target.nextSibling);
+        }
+    }
+
+</script>
+</head>
+<body>
+    
+
+    <table>
+        <tr>
+            <td valign = "top">
+              <ul>
+                <li><a href="/Kanbas/Account/Navigation/index.html">Account</a></li>
+                <li><a href="/Kanbas/Dashboard/screen.html">Dashboard</a></li>
+                <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
+                <li><a href="/Kanbas/Calendar/index.html">Calendar</a></li>
+                <li><a href="/Kanbas/Inbox/index.html">Inbox</a></li>
+                <li><a href="/Kanbas/History/index.html">History</a></li>
+                <li><a href="/Kanbas/Inbox/Studio.html">Studio</a></li>
+                <li><a href="/Kanbas/Inbox/Commons.html">Commons</a></li>
+                <li><a href="/Kanbas/Inbox/Help.html">Help</a></li>
+              </ul>
+            </td>
+            <td valign = "top">
+              <ul>
+                <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                <li><a href="/Kanbas/Courses/Modules/screen.html">Modules</a></li>
+                <li><a href="/Kanbas/Courses/Piazza/index.html">Piazza</a></li>
+                <li><a href="/Kanbas/Courses/Zoom/screen.html">Zoom Meetings</a></li>
+                <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
+                <li><a href="/Kanbas/Courses/Quizzes/screen.html">Quizzes</a></li>
+                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                <li><a href="/Kanbas/Courses/People/screen.html">People</a></li>
+                <li><a href="/Kanbas/Courses/Video/screen.html">Panopto Video</a></li>
+                <li><a href="/Kanbas/Courses/Discussions/screen.html">Discussions</a></li>
+                <li><a href="/Kanbas/Courses/Announcements/screen.html">Announcements</a></li>
+                <li><a href="/Kanbas/Courses/Pages/screen.html">Pages</a></li>
+                <li><a href="/Kanbas/Courses/Files/screen.html">Files</a></li>
+                <li><a href="/Kanbas/Courses/Rubrics/screen.html">Rubrics</a></li>
+                <li><a href="/Kanbas/Courses/Outcomes/screen.html">Outcomes</a></li>
+                <li><a href="/Kanbas/Courses/Collaborations/screen.html">Collaborations</a></li>
+                <li><a href="/Kanbas/Courses/Syllabus/screen.html">Syllabus</a></li>
+                <li><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
+              </ul>
+            </td>
+            <td>
+                <div class="button-container" style="display: flex; justify-content: space-between;">
+                    <a href="\Kanbas\Courses\Settings\Course_Details\screen.html"><button>Course Details</button></a>
+                    <a href="aaa.html"><button>Sections</button></a>
+                    <a href="\Kanbas\Courses\Settings\Navigation\screen.html"><button>Navigation</button></a>
+                    <a href="aaa.html"><button>Apps</button></a>
+                    <a href="aaa.html"><button>Feature Options</button></a>
+                    <a href="aaa.html"><button>Intergrations</button></a>
+                </div>
+
+                <h4>Drag and drop items to reorder them in the course navigation.</h4>
+
+                    <div id="navigation" class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div id="home" class="draggable-item" draggable="false" ondragstart="drag(event)">Home</div>
+                    <div id="modules" class="draggable-item" draggable="true" ondragstart="drag(event)">Modules<span class="drag-handle">⋮</span></div>
+                    <div id="piazza" class="draggable-item" draggable="true" ondragstart="drag(event)">Piazza<span class="drag-handle">⋮</span></div>
+                    <div id="Zoom" class="draggable-item" draggable="true" ondragstart="drag(event)">Zoom Meetings<span class="drag-handle">⋮</span></div>
+                    <div id="Assignments" class="draggable-item" draggable="true" ondragstart="drag(event)">Assignments<span class="drag-handle">⋮</span></div>
+                    <div id="Quizzes" class="draggable-item" draggable="true" ondragstart="drag(event)">Quizzes<span class="drag-handle">⋮</span></div>
+                    <div id="Grades" class="draggable-item" draggable="true" ondragstart="drag(event)">Grades<span class="drag-handle">⋮</span></div>
+                    <div id="People" class="draggable-item" draggable="true" ondragstart="drag(event)">People<span class="drag-handle">⋮</span></div>
+                    <div id="Panopto" class="draggable-item" draggable="true" ondragstart="drag(event)">Panopto Video<span class="drag-handle">⋮</span></div>
+                    </div>
+                <h1></h1>
+                <label>Drag items here to hide them from students.</label></br>
+                <label>Disabling most pages will cause students who visit those pages <br>to be redirected to the course home Page
+                    <div id="hiddenItems" class="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Chat</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">SCROM</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Attendance</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Barnes and Noble Bookstore</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Digication</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Top Hat</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Syllabus</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Perusall</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Microsoft Teams Meetings</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">FACT Reporting and Photo Roster</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Progress Reports (Navigate)</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Microsoft Teams for Canvas</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">VHL Central</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Gradescope 1.3</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">Credentials</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    <div id="chat" class="draggable-item" draggable="true" ondragstart="drag(event)">iClicker</br>Page disabled, won't appear in navigation<span class="drag-handle">⋮</span></div>
+                    </div>
+                </label>
+                <h1></h1>
+
+                <button type="button">Save</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
