@@ -3,15 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
         <link rel="stylesheet" href="/Kanbas/styles.css" />
         <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
         <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
         <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" />
-
+        <link rel="stylesheet" href="/Kanbas/Courses/Grades/styles.css" />
         <title>Document</title>
     </head>
     <body>
@@ -55,8 +53,80 @@
                         </ul>
                     </div>
                 </header>
+                <header id="mobile-header" class="no-print">
+                    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" hidden />
+                    <label for="sidebar-toggle" class="sidebar-toggle-btn">
+                        <i class="fa fa-bars"></i>
+                    </label>
+                    <label for="sidebar-toggle" class="sidebar-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                    <nav id="sidebar" class="sidebar">
+                        <ul>
+                            <br /><br />
+                            <li>
+                                <a href="/Kanbas/Dashboard/screen.html"> <i class="fa fa-tachometer"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="/Kanbas/Account/Profile/screen.html"> <i class="fa fa-user"></i>Account</a>
+                            </li>
+                            <li class="wd-active">
+                                <a href="/Kanbas/Courses/Home/screen.html"> <i class="fa fa-book"></i>Courses</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa fa-calendar"></i> Calendar</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-solid fa-inbox fa"></i>Inbox</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-regular fa-clock"></i>History</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-solid fa-folder-tree"></i>Studio</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-solid fa-right-from-bracket"></i>Commons</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-regular fa-circle-question"></i>Help</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-header-title expandable" aria-expanded="false">
+                        <div>CS5610.12631.202410</div>
+                        <div>Modules</div>
+                    </div>
+                    <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle" hidden />
+                    <label for="dropdown-toggle" class="dropdown-toggle-btn">
+                        <i class="fa-solid fa-glasses"></i>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </label>
+                    <label for="dropdown-toggle" class="dropdown-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                    <nav id="dropdown-menu" class="dropdown-menu">
+                        <ul>
+                            <li class="wd-active">
+                                <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                            </li>
+                            <li><a href="http://piazza.com">Piazza</a></li>
+                            <li><a href="#">Zoom</a></li>
+                            <li>
+                                <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                            </li>
+                            <li><a href="#">Quizzes</a></li>
+                            <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                            <li><a href="#">People</a></li>
+                            <li><a href="/Kanbas/Courses/Settings/screen.html">Setting</a></li>
+                        </ul>
+                    </nav>
+                </header>
                 <div class="col">
-                    <div class="row pt-3 pl-1 pr-1">
+                    <div class="row pt-3 pl-1 pr-1 second-nav-bar">
                         <div class="d-flex justify-content-between w-100">
                             <nav
                                 class="col-auto d-flex justify-content-center"
@@ -92,9 +162,9 @@
                             </div>
                         </div>
                     </div>
-                    <hr class="separator-line" />
+                    <hr class="separator-line second-nav-bar" />
                     <div class="row w-100">
-                        <div class="col-auto">
+                        <div class="col-auto second-nav-bar">
                             <ul class="wd-navigation">
                                 <li>
                                     <a href="/Kanbas/Courses/Home/screen.html">Home</a>
@@ -128,9 +198,10 @@
                                     <div class="ms-auto d-flex">
                                         <button class="btn btn-outline-secondary" type="button">+Group</button>
                                         <button class="btn btn-danger" type="button">+Assignment</button>
-                                        <button class="btn btn-outline-secondary" type="button">
-                                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                                        </button>
+                                        <a href="Edit\screen.html"
+                                            ><button class="btn btn-outline-secondary" type="button">
+                                                <i class="fa-solid fa-ellipsis-vertical"></i></button
+                                        ></a>
                                     </div>
                                 </div>
                             </div>

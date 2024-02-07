@@ -1,139 +1,279 @@
+<!doctype html>
 <html>
-  <head>
-    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="/Kanbas/styles.css" />
-    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
-  </head>
-  <body>
-    <table width="d-flex">
-      <tbody>
-        <tr>
-          <td valign="top" style="width: 80px">
-            <ul class="wd-kanbas-navigation d-none d-lg-block">
-              <li><a href="http://northeastern.edu">N</a></li>
-              <li><a href="/Kanbas/Account/Profile/screen.html">
-                <i class="fa fa-user"></i>Account</a>
-              </li>
-              <li class="wd-active">
-                <a href="/Kanbas/Dashboard/screen.html">
-                <i class="fa fa-tachometer"></i> Dashboard</a>
-              </li>
-              <li><a href="/Kanbas/Courses/Home/screen.html">
-                <i class="fa fa-book"></i>Courses</a>
-              </li>
-              <li><a href="#">
-                <i class="fa fa-calendar"></i> Calendar</a></li>
-              <li><a href="#">
-                <i class="fa-solid fa-inbox fa-2xl"></i><br>Inbox</a></li>
-              <li><a href="#">
-                <i class="fa-regular fa-clock"></i>History</a></li>
-              <li><a href="#">
-                <i class="fa-solid fa-folder-tree"></i>Studio</a></li>
-              <li><a href="#">
-                <i class="fa-solid fa-right-from-bracket"></i>Commons</a></li>
-              <li><a href="#">
-                <i class="fa-regular fa-circle-question"></i><br>Help</a></li>
-            </ul>
-          </td>
-          <td>
+    <head>
+        <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
 
-            <div class="p-4">
-                <h1>Dashboard</h1> <hr />
-                <h2>Published Courses (7)</h2> <hr />
-                <div class="row">
-                  <div class="row row-cols-1 row-cols-md-5 g-4">
-                    <div class="col" style="width: 300px">
-                      <div class="card">
-                        <img src="/images/reactjs.jpg" class="card-img-top"
-                             style="max-height: 150px"/>
-                        <div class="card-body">
-                          <a class="card-title" href="/Kanbas/Courses/Home/screen.html"
-                             style="text-decoration: none; color: navy; font-weight: bold">
-                             CS1234 React JS</a>
-                          <p class="card-text">Full Stack software developer</p>
-                          <a html="#" class="btn btn-primary"> Go </a>
-                        </div>
-                      </div>
+        <link rel="stylesheet" href="/Kanbas/styles.css" />
+        <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Dashboard/styles.css" />
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <header class="col-auto p-0">
+                    <div class="col-auto p-0">
+                        <ul class="wd-kanbas-navigation">
+                            <ul class="wd-kanbas-navigation d-none d-lg-block">
+                                <li><a href="http://northeastern.edu">N</a></li>
+                                <li>
+                                    <a href="/Kanbas/Account/Profile/screen.html"> <i class="fa fa-user"></i>Account</a>
+                                </li>
+                                <li class="wd-active">
+                                    <a href="/Kanbas/Dashboard/screen.html">
+                                        <i class="fa fa-tachometer"></i> Dashboard</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="/Kanbas/Courses/Home/screen.html"> <i class="fa fa-book"></i>Courses</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-calendar"></i> Calendar</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-inbox fa-2xl"></i><br />Inbox</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-regular fa-clock"></i>History</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-folder-tree"></i>Studio</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-right-from-bracket"></i>Commons</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-regular fa-circle-question"></i><br />Help</a>
+                                </li>
+                            </ul>
+                        </ul>
                     </div>
-                    <div class="col" style="width: 300px"> <div class="card">
-                        <img src="/images/001.png" class="card-img-top"
-                             style="max-height: 150px"/>
-                        <div class="card-body">
-                          <a class="card-title" href="/Kanbas/Courses/Home/screen.html"
-                             style="text-decoration: none; color: navy; font-weight: bold">
-                             Venusaur</a>
-                          <p class="card-text">#0003</p>
-                          <a html="#" class="btn btn-primary"> Go </a>
+                </header>
+                <header id="mobile-header" class="no-print">
+                    <div class="mobile-header-title expandable" aria-expanded="false">
+                        <div>Dashboard</div>
+                        <div>module</div>
+                    </div>
+                    <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle" hidden />
+                    <label for="dropdown-toggle" class="dropdown-toggle-btn">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </label>
+                    <label for="dropdown-toggle" class="dropdown-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </header>
+                <div class="col overflow-scroll">
+                    <div class="row">
+                        <div class="col">
+                            <table width="d-flex">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="p-4">
+                                                <div class="second-nav-bar">
+                                                    <h1>Dashboard</h1>
+                                                    <hr />
+                                                    <h2>Published Courses (7)</h2>
+                                                    <hr />
+                                                </div>
+                                                <div class="row">
+                                                    <div class="row row-cols-1 row-cols-md-5 g-4 vw-100">
+                                                        <div class="col" style="width: 300px">
+                                                            <div class="card">
+                                                                <img
+                                                                    src="/images/reactjs.jpg"
+                                                                    class="card-img-top"
+                                                                    style="max-height: 150px"
+                                                                />
+                                                                <div class="card-body">
+                                                                    <a
+                                                                        class="card-title"
+                                                                        href="/Kanbas/Courses/Home/screen.html"
+                                                                        style="
+                                                                            text-decoration: none;
+                                                                            color: navy;
+                                                                            font-weight: bold;
+                                                                        "
+                                                                    >
+                                                                        CS1234 React JS</a
+                                                                    >
+                                                                    <p class="card-text">
+                                                                        Full Stack software developer
+                                                                    </p>
+                                                                    <a html="#" class="btn btn-primary"> Go </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 300px">
+                                                            <div class="card">
+                                                                <img
+                                                                    src="/images/001.png"
+                                                                    class="card-img-top"
+                                                                    style="max-height: 150px"
+                                                                />
+                                                                <div class="card-body">
+                                                                    <a
+                                                                        class="card-title"
+                                                                        href="/Kanbas/Courses/Home/screen.html"
+                                                                        style="
+                                                                            text-decoration: none;
+                                                                            color: navy;
+                                                                            font-weight: bold;
+                                                                        "
+                                                                    >
+                                                                        CS5800: Algorithms</a
+                                                                    >
+                                                                    <p class="card-text">CS5800.3591.12312</p>
+                                                                    <a html="#" class="btn btn-primary"> Go </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 300px">
+                                                            <div class="card">
+                                                                <img
+                                                                    src="/images/002.png"
+                                                                    class="card-img-top"
+                                                                    style="max-height: 150px"
+                                                                />
+                                                                <div class="card-body">
+                                                                    <a
+                                                                        class="card-title"
+                                                                        href="/Kanbas/Courses/Home/screen.html"
+                                                                        style="
+                                                                            text-decoration: none;
+                                                                            color: navy;
+                                                                            font-weight: bold;
+                                                                        "
+                                                                    >
+                                                                        Career Prep</a
+                                                                    >
+                                                                    <p class="card-text">
+                                                                        aria-label="Khoury Graduate - Career Preparation
+                                                                        Spring 2023"
+                                                                    </p>
+                                                                    <a html="#" class="btn btn-primary"> Go </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 300px">
+                                                            <div class="card">
+                                                                <img
+                                                                    src="/images/003.png"
+                                                                    class="card-img-top"
+                                                                    style="max-height: 150px"
+                                                                />
+                                                                <div class="card-body">
+                                                                    <a
+                                                                        class="card-title"
+                                                                        href="/Kanbas/Courses/Home/screen.html"
+                                                                        style="
+                                                                            text-decoration: none;
+                                                                            color: navy;
+                                                                            font-weight: bold;
+                                                                        "
+                                                                    >
+                                                                        CS 5008 Data Structures
+                                                                    </a>
+                                                                    <p class="card-text">
+                                                                        CS5008 MERGED Data Str, Algo, and Their
+                                                                        Applications
+                                                                    </p>
+                                                                    <a html="#" class="btn btn-primary"> Go </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 300px">
+                                                            <div class="card">
+                                                                <img
+                                                                    src="/images/004.png"
+                                                                    class="card-img-top"
+                                                                    style="max-height: 150px"
+                                                                />
+                                                                <div class="card-body">
+                                                                    <a
+                                                                        class="card-title"
+                                                                        href="/Kanbas/Courses/Home/screen.html"
+                                                                        style="
+                                                                            text-decoration: none;
+                                                                            color: navy;
+                                                                            font-weight: bold;
+                                                                        "
+                                                                    >
+                                                                        CS5009 15375 Recitation
+                                                                    </a>
+                                                                    <p class="card-text">
+                                                                        for CS 5008 SEC 01 Fall 2023 [VTL-2-OL]
+                                                                    </p>
+                                                                    <a html="#" class="btn btn-primary"> Go </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 300px">
+                                                            <div class="card">
+                                                                <img
+                                                                    src="/images/005.png"
+                                                                    class="card-img-top"
+                                                                    style="max-height: 150px"
+                                                                />
+                                                                <div class="card-body">
+                                                                    <a
+                                                                        class="card-title"
+                                                                        href="/Kanbas/Courses/Home/screen.html"
+                                                                        style="
+                                                                            text-decoration: none;
+                                                                            color: navy;
+                                                                            font-weight: bold;
+                                                                        "
+                                                                    >
+                                                                        Khoury College’s Orientation (Spring 23)
+                                                                    </a>
+                                                                    <p class="card-text">
+                                                                        Khoury College’s Orientation
+                                                                    </p>
+                                                                    <a html="#" class="btn btn-primary"> Go </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col" style="width: 300px">
+                                                            <div class="card">
+                                                                <img
+                                                                    src="/images/006.png"
+                                                                    class="card-img-top"
+                                                                    style="max-height: 150px"
+                                                                />
+                                                                <div class="card-body">
+                                                                    <a
+                                                                        class="card-title"
+                                                                        href="/Kanbas/Courses/Home/screen.html"
+                                                                        style="
+                                                                            text-decoration: none;
+                                                                            color: navy;
+                                                                            font-weight: bold;
+                                                                        "
+                                                                    >
+                                                                        CS5002 Discrete Structures
+                                                                    </a>
+                                                                    <p class="card-text">36004 SEC 09+06 Spring 2023</p>
+                                                                    <a html="#" class="btn btn-primary"> Go </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                      </div>
-                     </div>
-                    <div class="col" style="width: 300px"> <div class="card">
-                        <img src="/images/002.png" class="card-img-top"
-                             style="max-height: 150px"/>
-                        <div class="card-body">
-                          <a class="card-title" href="/Kanbas/Courses/Home/screen.html"
-                             style="text-decoration: none; color: navy; font-weight: bold">
-                             Charizard</a>
-                          <p class="card-text">#0006</p>
-                          <a html="#" class="btn btn-primary"> Go </a>
-                        </div>
-                      </div>
-                     </div>
-                    <div class="col" style="width: 300px"> <div class="card">
-                        <img src="/images/003.png" class="card-img-top"
-                             style="max-height: 150px"/>
-                        <div class="card-body">
-                          <a class="card-title" href="/Kanbas/Courses/Home/screen.html"
-                             style="text-decoration: none; color: navy; font-weight: bold">
-                             Blastoise </a>
-                          <p class="card-text">#0009</p>
-                          <a html="#" class="btn btn-primary"> Go </a>
-                        </div>
-                      </div>
-                     </div>
-                    <div class="col" style="width: 300px"> <div class="card">
-                        <img src="/images/004.png" class="card-img-top"
-                             style="max-height: 150px"/>
-                        <div class="card-body">
-                          <a class="card-title" href="/Kanbas/Courses/Home/screen.html"
-                             style="text-decoration: none; color: navy; font-weight: bold">
-                             Butterfree </a>
-                          <p class="card-text">#0012</p>
-                          <a html="#" class="btn btn-primary"> Go </a>
-                        </div>
-                      </div>
-                     </div>
-                    <div class="col" style="width: 300px"> <div class="card">
-                        <img src="/images/005.png" class="card-img-top"
-                             style="max-height: 150px"/>
-                        <div class="card-body">
-                          <a class="card-title" href="/Kanbas/Courses/Home/screen.html"
-                             style="text-decoration: none; color: navy; font-weight: bold">
-                             Pidgeot </a>
-                          <p class="card-text">#0018</p>
-                          <a html="#" class="btn btn-primary"> Go </a>
-                        </div>
-                      </div>
-                     </div>
-                    <div class="col" style="width: 300px"> <div class="card">
-                        <img src="/images/006.png" class="card-img-top"
-                             style="max-height: 150px"/>
-                        <div class="card-body">
-                          <a class="card-title" href="/Kanbas/Courses/Home/screen.html"
-                             style="text-decoration: none; color: navy; font-weight: bold">
-                             Raichu </a>
-                          <p class="card-text">#0026</p>
-                          <a html="#" class="btn btn-primary"> Go </a>
-                        </div>
-                      </div>
-                     </div>
-                  </div>
+                    </div>
                 </div>
-              </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </body>
+            </div>
+        </div>
+    </body>
 </html>

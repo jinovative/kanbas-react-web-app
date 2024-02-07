@@ -1,350 +1,477 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/Kanbas/styles.css" />
-    <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
-
-    <link rel="stylesheet" href="/Kanbas/styles.css" />
-    <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
-
+        <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+        <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Grades/styles.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Home/styles.css" />
         <title>Document</title>
     </head>
     <body>
-        <table>
-            <tr>
-                <td valign="top">
-                    <ul class="wd-kanbas-navigation">
-                        <li><a href="http://northeastern.edu">N</a></li>
-                        <li><a href="/Kanbas/Account/Profile/screen.html">
-                          <i class="fa fa-user"></i>Account</a>
-                        </li>
-                        <li>
-                          <a href="/Kanbas/Dashboard/screen.html">
-                          <i class="fa fa-tachometer"></i> Dashboard</a>
-                        </li>
-                        <li class="wd-active"><a href="/Kanbas/Courses/Home/screen.html">
-                          <i class="fa fa-book"></i>Courses</a>
-                        </li>
-                        <li><a href="#">
-                          <i class="fa fa-calendar"></i> Calendar</a></li>
-                        <li><a href="#">Inbox</a></li>
-                        <li><a href="#">History</a></li>
-                        <li><a href="#">Studio</a></li>
-                        <li><a href="#">Commons</a></li>
-                        <li><a href="#">Help</a></li>
-                      </ul>
-                </td>
-                <td valign="top">
-                    <ul class="wd-navigation">
-        <li>
-          <a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
-        <li>
-          <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-        </li>
-        <li><a href="http://piazza.com">Piazza</a></li>
-        <li><a href="#">Zoom</a></li>
-        <li>
-          <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
-        </li>
-        <li><a href="#">Quizzes</a></li>
-        <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
-        <li><a href="#">People</a></li>
-        <li class="wd-active"><a href="/Kanbas/Courses/Settings/screen.html">Setting</a></li>
-      </ul>
-                </td>
-
-                <td>
-                    <div
-                        class="button-container"
-                        style="display: flex; justify-content: space-between;">
-                        <a href="\Kanbas\Courses\Settings\Course_Details\screen.html">
-                            <button>Course Details</button>
-                        </a>
-                        <a href="aaa.html">
-                            <button>Sections</button>
-                        </a>
-                        <a href="\Kanbas\Courses\Settings\Navigation\screen.html">
-                            <button>Navigation</button>
-                        </a>
-                        <a href="aaa.html">
-                            <button>Apps</button>
-                        </a>
-                        <a href="aaa.html">
-                            <button>Feature Options</button>
-                        </a>
-                        <a href="aaa.html">
-                            <button>Intergrations</button>
-                        </a>
+        <div class="container-fluid">
+            <div class="row">
+                <header class="col-auto p-0">
+                    <div class="col-auto p-0">
+                        <ul class="wd-kanbas-navigation">
+                            <ul class="wd-kanbas-navigation d-none d-lg-block">
+                                <li><a href="http://northeastern.edu">N</a></li>
+                                <li>
+                                    <a href="/Kanbas/Account/Profile/screen.html"> <i class="fa fa-user"></i>Account</a>
+                                </li>
+                                <li>
+                                    <a href="/Kanbas/Dashboard/screen.html">
+                                        <i class="fa fa-tachometer"></i> Dashboard</a
+                                    >
+                                </li>
+                                <li class="wd-active">
+                                    <a href="/Kanbas/Courses/Home/screen.html"> <i class="fa fa-book"></i>Courses</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-calendar"></i> Calendar</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-inbox fa-2xl"></i><br />Inbox</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-regular fa-clock"></i>History</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-folder-tree"></i>Studio</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-right-from-bracket"></i>Commons</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-regular fa-circle-question"></i><br />Help</a>
+                                </li>
+                            </ul>
+                        </ul>
                     </div>
-                    <h2>Course Details</h2>
-                    <table>
-                        <tbody>
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="image">Image:</label>
-                                </th>
-                                <td>
-                                    <input type="file" id="image" name="image"><br><br>
-                                </td>
-                            </tr>
+                </header>
+                <header id="mobile-header" class="no-print">
+                    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" hidden />
+                    <label for="sidebar-toggle" class="sidebar-toggle-btn">
+                        <i class="fa fa-bars"></i>
+                    </label>
+                    <label for="sidebar-toggle" class="sidebar-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                    <nav id="sidebar" class="sidebar">
+                        <ul>
+                            <br /><br />
+                            <li>
+                                <a href="/Kanbas/Dashboard/screen.html"> <i class="fa fa-tachometer"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="/Kanbas/Account/Profile/screen.html"> <i class="fa fa-user"></i>Account</a>
+                            </li>
+                            <li class="wd-active">
+                                <a href="/Kanbas/Courses/Home/screen.html"> <i class="fa fa-book"></i>Courses</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa fa-calendar"></i> Calendar</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-solid fa-inbox fa"></i>Inbox</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-regular fa-clock"></i>History</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-solid fa-folder-tree"></i>Studio</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-solid fa-right-from-bracket"></i>Commons</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-regular fa-circle-question"></i>Help</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-header-title expandable" aria-expanded="false">
+                        <div>CS5610.12631.202410</div>
+                        <div>Modules</div>
+                    </div>
+                    <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle" hidden />
+                    <label for="dropdown-toggle" class="dropdown-toggle-btn">
+                        <i class="fa-solid fa-glasses"></i>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </label>
+                    <label for="dropdown-toggle" class="dropdown-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                    <nav id="dropdown-menu" class="dropdown-menu">
+                        <ul>
+                            <li class="wd-active">
+                                <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                            </li>
+                            <li><a href="http://piazza.com">Piazza</a></li>
+                            <li><a href="#">Zoom</a></li>
+                            <li>
+                                <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                            </li>
+                            <li><a href="#">Quizzes</a></li>
+                            <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                            <li><a href="#">People</a></li>
+                            <li><a href="/Kanbas/Courses/Settings/screen.html">Setting</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <div class="col overflow-scroll">
+                    <div class="row pt-3 pl-1 pr-1 second-nav-bar">
+                        <div class="d-flex justify-content-between w-100">
+                            <nav
+                                class="col-auto d-flex justify-content-center"
+                                aria-label="breadcrumb"
+                                style="--bs-breadcrumb-divider: '>'"
+                            >
+                                <ol
+                                    class="breadcrumb d-flex justify-content-center align-items-center"
+                                    style="font-size: larger; background-color: transparent"
+                                >
+                                    <li>
+                                        <button
+                                            class="menu-toggle btn btn-link pr-4"
+                                            style="border: none; background-color: transparent; color: red"
+                                        >
+                                            <i class="fa fa-bars fa-xl"></i>
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="breadcrumb-item"
+                                        style="border: none; background-color: transparent; color: red"
+                                    >
+                                        CS4550.16321.20410
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Settings</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    <hr class="separator-line second-nav-bar" />
+                    <div class="row">
+                        <div class="col-auto second-nav-bar">
+                            <ul class="wd-navigation">
+                                <li>
+                                    <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                                </li>
+                                <li><a href="http://piazza.com">Piazza</a></li>
+                                <li><a href="#">Zoom</a></li>
+                                <li>
+                                    <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                                </li>
+                                <li><a href="#">Quizzes</a></li>
+                                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                                <li><a href="#">People</a></li>
+                                <li class="wd-active"><a href="/Kanbas/Courses/Settings/screen.html">Setting</a></li>
+                            </ul>
+                        </div>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="name">Name:</label>
-                                </th>
-                                <td>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        value="CS4550 12631 Web Development SEC 01 Fall 2023 (BOS-1-TR)"><br><br>
-                                </td>
-                            </tr>
+                        <div class="col">
+                            <h2>Course Details</h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            <label for="image">Image:</label>
+                                        </th>
+                                        <td><input type="file" id="image" name="image" /><br /><br /></td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="courseCode">Course Code:</label>
-                                </th>
-                                <td>
-                                    <input
-                                        type="text"
-                                        id="courseCode"
-                                        name="courseCode"
-                                        value="CS4550.12631.202410"><br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="name">Name:</label>
+                                        </th>
+                                        <td>
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                                value="CS4550 12631 Web Development SEC 01 Fall 2023 (BOS-1-TR)"
+                                            /><br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="blueprintCourse">Blueprint Course:</label>
-                                </th>
-                                <td>
-                                    <input type="checkbox" name="blueprintCourse">Yes
-                                    <input type="checkbox" name="blueprintCourse">No<br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="courseCode">Course Code:</label>
+                                        </th>
+                                        <td>
+                                            <input
+                                                type="text"
+                                                id="courseCode"
+                                                name="courseCode"
+                                                value="CS4550.12631.202410"
+                                            /><br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="courseTemplate">Course Template:</label>
-                                </th>
-                                <td>
-                                    <input type="checkbox" name="courseTemplate">
-                                    Enable course as a course Template<br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="blueprintCourse">Blueprint Course:</label>
+                                        </th>
+                                        <td>
+                                            <input type="checkbox" name="blueprintCourse" value="Yes" />Yes
+                                            <input type="checkbox" name="blueprintCourse" value="No" />No<br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="timeZone">Time Zone:</label>
-                                </th>
-                                <td>
-                                    <select id="timeZone" name="timeZone">
-                                        <option value="Eastern Time (US & Canada)">Eastern Time (US & Canada)</option>
-                                    </select><br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="courseTemplate">Course Template:</label>
+                                        </th>
+                                        <td>
+                                            <input
+                                                type="checkbox"
+                                                name="courseTemplate"
+                                                value="Enable course as a course Template"
+                                            /><br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="sisId">SIS ID:</label>
-                                </th>
-                                <td>
-                                    <input type="text" id="sisId" name="sisId" value="CS4550.12631.202410"><br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="timeZone">Time Zone:</label>
+                                        </th>
+                                        <td>
+                                            <select id="timeZone" name="timeZone">
+                                                <option value="Eastern Time (US & Canada)">
+                                                    Eastern Time (US & Canada)
+                                                </option></select
+                                            ><br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="subaccount">Subaccount:</label>
-                                </th>
-                                <td>
-                                    <input type="text" id="subaccount" name="subaccount" value="CS Undergrad"><br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="sisId">SIS ID:</label>
+                                        </th>
+                                        <td>
+                                            <input
+                                                type="text"
+                                                id="sisId"
+                                                name="sisId"
+                                                value="CS4550.12631.202410"
+                                            /><br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="term">Term:</label>
-                                </th>
-                                <td>
-                                    <input
-                                        type="text"
-                                        id="term"
-                                        name="term"
-                                        value="202410_Fall 2023 Semester Full Term"><br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="subaccount">Subaccount:</label>
+                                        </th>
+                                        <td>
+                                            <input
+                                                type="text"
+                                                id="subaccount"
+                                                name="subaccount"
+                                                value="CS Undergrad"
+                                            /><br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="participation">Participation:</label>
-                                </th>
-                                <td>
-                                    <select id="participation" name="participation">
-                                        <option value="Term">Term</option>
-                                    </select><br><br>
+                                    <tr>
+                                        <th>
+                                            <label for="term">Term:</label>
+                                        </th>
+                                        <td>
+                                            <input
+                                                type="text"
+                                                id="term"
+                                                name="term"
+                                                value="202410_Fall 2023 Semester Full Term"
+                                            /><br /><br />
+                                        </td>
+                                    </tr>
 
-                                    <label for="start">Start:</label>
-                                    <input type="date" id="start" name="start"><br><br>
+                                    <tr>
+                                        <th>
+                                            <label for="participation">Participation:</label>
+                                        </th>
+                                        <td>
+                                            <select id="participation" name="participation">
+                                                <option value="Term">Term</option></select
+                                            ><br /><br />
 
-                                    <label for="end">End:</label>
-                                    <input type="date" id="end" name="end"><br><br>
+                                            <label for="start">Start:</label>
+                                            <input type="date" id="start" name="start" /><br /><br />
 
-                                    <input type="checkbox" id="restrictBefore" name="restrictBefore">
-                                    <label for="restrictBefore">Restrict students from viewing course before term start date:</label><br><br>
+                                            <label for="end">End:</label>
+                                            <input type="date" id="end" name="end" /><br /><br />
 
-                                    <input type="checkbox" id="restrictAfter" name="restrictAfter">
-                                    <label for="restrictAfter">Restrict students from viewing course after term end date:</label><br><br>
-                                </td>
-                            </tr>
+                                            <input type="checkbox" id="restrictBefore" name="restrictBefore" />
+                                            <label for="restrictBefore"
+                                                >Restrict students from viewing course before term start date:</label
+                                            ><br /><br />
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="defaultDueTime">Default due time:</label>
-                                </th>
-                                <td>
-                                    <select id="defaultDueTime" name="defaultDueTime">
-                                        <option value="11:59pm">Account default (11:59pm)</option>
-                                    </select><br>
-                                    This influences the user intrerface for setting due dates.
-                                    <br>
-                                    It does not change the time due for any existing assignments.<br><br>
-                                </td>
-                            </tr>
+                                            <input type="checkbox" id="restrictAfter" name="restrictAfter" />
+                                            <label for="restrictAfter"
+                                                >Restrict students from viewing course after term end date:</label
+                                            ><br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="language">Language:</label>
-                                </th>
-                                <td>
-                                    <select id="language" name="language">
-                                        <option value="English">Not set (user-configurable, defaults to English)</option>
-                                    </select><br>
-                                    This will override any user/system language preferences.<br>
-                                    This is only recommended for foreign language courses.<br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="defaultDueTime">Default due time:</label>
+                                        </th>
+                                        <td>
+                                            <select id="defaultDueTime" name="defaultDueTime">
+                                                <option value="11:59pm">Account default (11:59pm)</option></select
+                                            ><br />
+                                            This influences the user interface for setting due dates.
+                                            <br />
+                                            It does not change the time due for any existing assignments.<br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="fileStorage">File Storage:</label>
-                                </th>
-                                <td>
-                                    <input type="number" id="fileStorage" name="fileStorage" value="10000">
-                                    megabytes<br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="language">Language:</label>
+                                        </th>
+                                        <td>
+                                            <select id="language" name="language">
+                                                <option value="English">
+                                                    Not set (user-configurable, defaults to English)
+                                                </option></select
+                                            ><br />
+                                            This will override any user/system language preferences.<br />
+                                            This is only recommended for foreign language courses.<br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="largeCourse">Large Course:</label>
-                                </th>
-                                <td>
-                                    <input
-                                        type="checkbox"
-                                        id="largeCourse"
-                                        name="largeCourse"
-                                        value="Launch SpeedGrader Filtered by Student Group">
-                                    Launch SpeedGrader Filtered by Student Group<br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="fileStorage">File Storage:</label>
+                                        </th>
+                                        <td>
+                                            <input type="number" id="fileStorage" name="fileStorage" value="10000" />
+                                            megabytes<br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="gradingScheme">Grading Scheme:</label>
-                                </th>
-                                <td>
-                                    <input
-                                        type="checkbox"
-                                        id="gradingScheme"
-                                        name="gradingScheme"
-                                        value="Enable course grading scheme">
-                                    Enable course grading scheme<br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="largeCourse">Large Course:</label>
+                                        </th>
+                                        <td>
+                                            <input
+                                                type="checkbox"
+                                                id="largeCourse"
+                                                name="largeCourse"
+                                                value="Launch SpeedGrader Filtered by Student Group"
+                                            />
+                                            Launch SpeedGrader Filtered by Student Group<br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="license">License:</label>
-                                </th>
-                                <td>
-                                    <select id="license" name="license">
-                                        <option value="Private">Private (Copyrighted)</option>
-                                    </select><br><br>
-                                </td>
-                            </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="gradingScheme">Grading Scheme:</label>
+                                        </th>
+                                        <td>
+                                            <input
+                                                type="checkbox"
+                                                id="gradingScheme"
+                                                name="gradingScheme"
+                                                value="Enable course grading scheme"
+                                            />
+                                            Enable course grading scheme<br /><br />
+                                        </td>
+                                    </tr>
 
-                            <tr style="text-align:left;vertical-align:top;padding:0">
-                                <th>
-                                    <label for="fileCopyright">File Copyright:</label>
-                                </th>
-                                <td>
-                                    <input id="fileCopyright" name="fileCopyright" rows="3">Copyright and license
-                                        information must be provided for files before they are published.<br><br></textarea><br><br>
-                            </td>
-                        </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="license">License:</label>
+                                        </th>
+                                        <td>
+                                            <select id="license" name="license">
+                                                <option value="Private">Private (Copyrighted)</option></select
+                                            ><br /><br />
+                                        </td>
+                                    </tr>
 
-                        <tr style="text-align:left;vertical-align:top;padding:0">
-                            <th>
-                                <label for="visibility">Visibility:</label>
+                                    <tr>
+                                        <th>
+                                            <label for="fileCopyright">File Copyright:</label>
+                                        </th>
+                                        <td>
+                                            <textarea id="fileCopyright" name="fileCopyright" rows="3"></textarea>
+                                            Copyright and license information must be provided for files before they are
+                                            published.<br /><br />
+                                        </td>
+                                    </tr>
 
-                            </th>
-                            <td>
-                                If you need to make your course public please context your administarot/support.<br>
-                                <select id="visibility" name="visibility">
-                                    <option value="Course">Course</option><br><br>
-                                </select><br>
-                                <input type="checkbox" id="includeInIndex" name="includeInIndex">
-                                <label for="includeInIndex">Include this course in the public course index:</label><br><br>
-                            </td>
-                        </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="visibility">Visibility:</label>
+                                        </th>
+                                        <td>
+                                            If you need to make your course public please contact your
+                                            administrator/support.<br />
+                                            <select id="visibility" name="visibility">
+                                                <option value="Course">Course</option></select
+                                            ><br /><br />
+                                            <input type="checkbox" id="includeInIndex" name="includeInIndex" />
+                                            <label for="includeInIndex"
+                                                >Include this course in the public course index:</label
+                                            ><br /><br />
+                                        </td>
+                                    </tr>
 
-                        <tr style="text-align:left;vertical-align:top;padding:0">
-                            <th>
-                                <label for="format">Format:</label>
-                            </th>
-                            <td>
-                                <select id="format" name="format">
-                                    <option value="On-Campus">On-Campus</option>
-                                </select><br><br>
-                            </td>
-                        </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="format">Format:</label>
+                                        </th>
+                                        <td>
+                                            <select id="format" name="format">
+                                                <option value="On-Campus">On-Campus</option></select
+                                            ><br /><br />
+                                        </td>
+                                    </tr>
 
-                        <tr style="text-align:left;vertical-align:top;padding:0">
-                            <th>
-                                <label for="masteryPaths">Mastery Paths:</label>
-                            </th>
-                            <td>
-                                <input type="checkbox" id="masteryPaths" name="masteryPaths">Enable individual learning paths for students based on assessment
-                                <br><br>
-                            </td>
-                        </tr>
+                                    <tr>
+                                        <th>
+                                            <label for="masteryPaths">Mastery Paths:</label>
+                                        </th>
+                                        <td>
+                                            <input type="checkbox" id="masteryPaths" name="masteryPaths" />Enable
+                                            individual learning paths for students based on assessment <br /><br />
+                                        </td>
+                                    </tr>
 
-                        <tr style="text-align:left;vertical-align:top;padding:0">
-                            <th>
-                                <label for="description">Description:</label>
-                            </th>
-                            <td>
-                                <textarea id="description" name="description" rows="4"></textarea><br>
-                                <a href="Options">more options</a><br>
-
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td style="text-align:right;"><input type="submit" value="Submit"><br>
-                            </td>
-                        </tbody>
-
-                    </table>
-
-                </tr>
-            </table>
-        </body>
-    </html>
+                                    <tr>
+                                        <th>
+                                            <label for="description">Description:</label>
+                                        </th>
+                                        <td>
+                                            <textarea id="description" name="description" rows="4"></textarea><br />
+                                            <a href="Options">more options</a><br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: right"><input type="submit" value="Submit" /><br /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

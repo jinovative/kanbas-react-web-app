@@ -12,7 +12,8 @@
         <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
         <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" />
         <link rel="stylesheet" href="/Kanbas/Courses/Grades/styles.css" />
-        <title>Document</title>
+
+        <title>Grade</title>
     </head>
     <body>
         <div class="container-fluid">
@@ -55,8 +56,80 @@
                         </ul>
                     </div>
                 </header>
-                <div class="col">
-                    <div class="row pt-3 pl-1 pr-1">
+                <header id="mobile-header" class="no-print">
+                    <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" hidden />
+                    <label for="sidebar-toggle" class="sidebar-toggle-btn">
+                        <i class="fa fa-bars"></i>
+                    </label>
+                    <label for="sidebar-toggle" class="sidebar-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                    <nav id="sidebar" class="sidebar">
+                        <ul>
+                            <br /><br />
+                            <li>
+                                <a href="/Kanbas/Dashboard/screen.html"> <i class="fa fa-tachometer"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="/Kanbas/Account/Profile/screen.html"> <i class="fa fa-user"></i>Account</a>
+                            </li>
+                            <li class="wd-active">
+                                <a href="/Kanbas/Courses/Home/screen.html"> <i class="fa fa-book"></i>Courses</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa fa-calendar"></i> Calendar</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-solid fa-inbox fa"></i>Inbox</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-regular fa-clock"></i>History</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-solid fa-folder-tree"></i>Studio</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-solid fa-right-from-bracket"></i>Commons</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="fa-regular fa-circle-question"></i>Help</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-header-title expandable" aria-expanded="false">
+                        <div>CS5610.12631.202410</div>
+                        <div>Modules</div>
+                    </div>
+                    <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle" hidden />
+                    <label for="dropdown-toggle" class="dropdown-toggle-btn">
+                        <i class="fa-solid fa-glasses"></i>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </label>
+                    <label for="dropdown-toggle" class="dropdown-close-btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                    <nav id="dropdown-menu" class="dropdown-menu">
+                        <ul>
+                            <li class="wd-active">
+                                <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                            </li>
+                            <li><a href="http://piazza.com">Piazza</a></li>
+                            <li><a href="#">Zoom</a></li>
+                            <li>
+                                <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                            </li>
+                            <li><a href="#">Quizzes</a></li>
+                            <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                            <li><a href="#">People</a></li>
+                            <li><a href="/Kanbas/Courses/Settings/screen.html">Setting</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <div class="col overflow-scroll">
+                    <div class="row pt-3 pl-1 pr-1 second-nav-bar">
                         <div class="d-flex justify-content-between w-100">
                             <nav
                                 class="col-auto d-flex justify-content-center"
@@ -86,9 +159,9 @@
                             </nav>
                         </div>
                     </div>
-                    <hr class="separator-line" />
+                    <hr class="separator-line second-nav-bar" />
                     <div class="row">
-                        <div class="col-auto">
+                        <div class="col-auto second-nav-bar">
                             <ul class="wd-navigation">
                                 <li>
                                     <a href="/Kanbas/Courses/Home/screen.html">Home</a>
@@ -108,7 +181,7 @@
                             </ul>
                         </div>
 
-                        <div class="col">
+                        <div class="col overflow-scroll">
                             <div class="input-group w-100">
                                 <div class="d-flex w-100">
                                     <div class="ms-auto d-flex align-items-center pr-1">
@@ -173,93 +246,774 @@
                                     <i class="fa-solid fa-filter"></i>Apply Filters
                                 </button>
                             </div>
-                            <div class="container">
-                                <div class="fixed-size-container w-auto">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Student Name</th>
-                                                <th>A1 SETUP Out of 100</th>
-                                                <th>A2 HTML Out of 100</th>
-                                                <th>A3 CSS Out of 100</th>
-                                                <th>A4 BOOTSTRAP Out of 100</th>
-                                                <th>Student Name</th>
-                                                <th>A1 SETUP Out of 100</th>
-                                                <th>A2 HTML Out of 100</th>
-                                                <th>A3 CSS Out of 100</th>
-                                                <th>A4 BOOTSTRAP Out of 100</th>
-                                                <th>Student Name</th>
-                                                <th>A1 SETUP Out of 100</th>
-                                                <th>A2 HTML Out of 100</th>
-                                                <th>A3 CSS Out of 100</th>
-                                                <th>A4 BOOTSTRAP Out of 100</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Alice Wonderland</td>
-                                                <td>
-                                                    <input type="text" class="form-control score-input" value="98%" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control score-input" value="89%" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control score-input" value="87%" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control score-input" value="90%" />
-                                                </td>
-
-                                                <!-- Add more score cells as needed -->
-                                            </tr>
-                                            <!-- Add more rows as needed -->
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="container">
-                                <div class="scrollable-table-container">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Student Name</th>
-                                                <th>A1 SETUP Out of 100</th>
-                                                <th>A2 HTML Out of 100</th>
-                                                <th>A3 CSS Out of 100</th>
-                                                <th>A4 BOOTSTRAP Out of 100</th>
-                                                <!-- Add more headers as needed -->
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Alice Wonderland</td>
-                                                <td>
-                                                    <input type="text" class="form-control score-input" value="98%" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control score-input" value="89%" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control score-input" value="87%" />
-                                                </td>
-                                                <td>
-                                                    <input type="text" class="form-control score-input" value="90%" />
-                                                </td>
-                                                <!-- Add more score cells as needed -->
-                                            </tr>
-                                            <!-- Add more rows as needed -->
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <div class="fixed-size-container">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="student-name">Student Name</th>
+                                            <th class="assignment-title">
+                                                <div class="title-container">
+                                                    <div class="main-title">A1 SETUP</div>
+                                                    <div class="subtitle">Out of 100</div>
+                                                </div>
+                                            </th>
+                                            <th class="assignment-title">
+                                                <div class="title-container">
+                                                    <div class="main-title">A2 HTML</div>
+                                                    <div class="subtitle">Out of 100</div>
+                                                </div>
+                                            </th>
+                                            <th class="assignment-title">
+                                                <div class="title-container">
+                                                    <div class="main-title">A3 CSS</div>
+                                                    <div class="subtitle">Out of 100</div>
+                                                </div>
+                                            </th>
+                                            <th class="assignment-title">
+                                                <div class="title-container">
+                                                    <div class="main-title">A4 BOOTSTRAP</div>
+                                                    <div class="subtitle">Out of 100</div>
+                                                </div>
+                                            </th>
+                                            <th class="assignment-title">
+                                                <div class="title-container">
+                                                    <div class="main-title">A5 JAVASCRIPT</div>
+                                                    <div class="subtitle">Out of 100</div>
+                                                </div>
+                                            </th>
+                                            <th class="assignment-title">
+                                                <div class="title-container">
+                                                    <div class="main-title">A6 REACT</div>
+                                                    <div class="subtitle">Out of 100</div>
+                                                </div>
+                                            </th>
+                                            <th class="assignment-title">
+                                                <div class="title-container">
+                                                    <div class="main-title">A7</div>
+                                                    <div class="subtitle">Out of 100</div>
+                                                </div>
+                                            </th>
+                                            <th class="assignment-title">
+                                                <div class="title-container">
+                                                    <div class="main-title">A8</div>
+                                                    <div class="subtitle">Out of 100</div>
+                                                </div>
+                                            </th>
+                                            <th class="assignment-title">
+                                                <div class="title-container">
+                                                    <div class="main-title">A9</div>
+                                                    <div class="subtitle">Out of 100</div>
+                                                </div>
+                                            </th>
+                                            <th class="assignment-title">
+                                                <div class="title-container">
+                                                    <div class="main-title">A10</div>
+                                                    <div class="subtitle">Out of 100</div>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="student-name">Butterfree</td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="student-name">Caterpie</td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="student-name">Blastoise</td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="student-name">Wartortle</td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="student-name">Squirtle</td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="student-name">Charizard</td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="student-name">Charmeleon</td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="student-name">Charmander</td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="student-name">Venusaur</td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="student-name">Ivysaur</td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="student-name">Bulbasaur</td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                            <td class="input-icon-container">
+                                                <input type="text" class="form-control score-input" value="100%" />
+                                                <button class="btn input-icon-button d-flex align-items-center">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <table>
-            <tr></tr>
-        </table>
     </body>
 </html>

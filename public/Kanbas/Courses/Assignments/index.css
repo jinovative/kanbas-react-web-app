@@ -36,12 +36,12 @@
 .badge-outline {
     padding: 3px;
     background-color: transparent;
-    border: 1px solid #6c757d; /* 아웃라인 색상 설정 */
-    color: #6c757d; /* 텍스트 색상 설정 */
-    border-radius: 10px; /* 모서리 곡률 추가 */
-    font-size: 0.8em; /* 폰트 사이즈 조절 */
+    border: 1px solid #6c757d;
+    color: #6c757d;
+    border-radius: 10px;
+    font-size: 0.8em;
 }
 a {
-    color: black; /* 모든 링크의 텍스트 색상을 검정색으로 설정 */
-    text-decoration: none; /* 모든 링크의 밑줄 제거 */
+    color: black;
+    text-decoration: none;
 }

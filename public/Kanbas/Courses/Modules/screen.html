@@ -4,12 +4,16 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+
         <link rel="stylesheet" href="/Kanbas/styles.css" />
         <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
-        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+
         <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
         <link rel="stylesheet" href="/Kanbas/Courses/Home/styles.css" />
         <link rel="stylesheet" href="/Kanbas/Courses/Grades/styles.css" />
+
+        <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" />
 
         <title>Home module</title>
     </head>
@@ -152,7 +156,7 @@
                                     >
                                         CS4550.16321.20410
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Home</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Modules</li>
                                 </ol>
                             </nav>
                             <div class="col-auto d-flex justify-content-center btn pt-2 pb-4 pl-3 pr-3">
@@ -166,10 +170,10 @@
                     <div class="row">
                         <div class="col-auto second-nav-bar">
                             <ul class="wd-navigation">
-                                <li class="wd-active">
+                                <li>
                                     <a href="/Kanbas/Courses/Home/screen.html">Home</a>
                                 </li>
-                                <li>
+                                <li class="wd-active">
                                     <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
                                 </li>
                                 <li><a href="http://piazza.com">Piazza</a></li>
@@ -350,138 +354,6 @@
                                                         </span>
                                                     </div>
                                                 </li>
-                                            </ul>
-                                        </td>
-                                        <td>
-                                            <ul class="second-column-class d-none d-xl-block">
-                                                <div class="flex-grow-0 me-2 d-none d-lg-block" style="width: 250px">
-                                                    <h4>Course Status</h4>
-                                                    <div class="button-group">
-                                                        <button type="button" class="status-btn unpublish-btn">
-                                                            <i class="fa fa-ban"></i>Unpublish
-                                                        </button>
-                                                        <button type="button" class="status-btn publish-btn">
-                                                            <i class="fa fa-check"></i>Published
-                                                        </button>
-                                                    </div>
-
-                                                    <ul class="status-list">
-                                                        <li>
-                                                            <a href="#" class="status-item"
-                                                                ><i class="fa fa-cloud-download"></i> Import Existing
-                                                                Content</a
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="status-item"
-                                                                ><i class="fa fa-cloud"></i> Import from Commons</a
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="status-item"
-                                                                ><i class="fa fa-home"></i> Choose Home Page</a
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="status-item"
-                                                                ><i class="fa fa-chart-column"></i> View Course
-                                                                Stream</a
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="status-item"
-                                                                ><i class="fa fa-bullhorn"></i> New Announcement</a
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="status-item"
-                                                                ><i class="fa fa-chart-bar"></i> New Analytics</a
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="status-item"
-                                                                ><i class="fa fa-bell"></i> View Course Notifications</a
-                                                            >
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="header-section" style="width: 260px">
-                                                    <h4>To Do</h4>
-                                                </div>
-                                                <div>
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item todo-item">
-                                                            <span class="badge rounded-pill bg-danger">1</span>
-                                                            <a href="#" class="todo-title">Grade A1 - ENV + HTML</a
-                                                            ><button
-                                                                type="button"
-                                                                class="btn-close"
-                                                                aria-label="Close"
-                                                            ></button
-                                                            ><br />
-                                                            <span class="todo-points">100 points</span>
-                                                            <span class="todo-due-date">Sep 18 at 11:59pm</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <br />
-                                                <div class="coming-up-section">
-                                                    <div class="coming-up-section">
-                                                        <div class="header-section" style="width: 260px">
-                                                            <h4>Coming Up</h4>
-                                                            <a href="#" class="view-calendar-link">
-                                                                <i class="fa fa-calendar"></i> View Calendar
-                                                            </a>
-                                                        </div>
-                                                        <ul class="list-group">
-                                                            <li class="list-group-item">
-                                                                <div class="lecture-title">
-                                                                    <i class="fa fa-calendar"></i
-                                                                    ><span><a href="#">Lecture</a></span>
-                                                                </div>
-                                                                <div class="lecture-info">
-                                                                    <span class="lecture-course"
-                                                                        >CS4550.12631.202410</span
-                                                                    >
-                                                                    <span class="date-time">Sep 11 at 11:45am</span>
-                                                                </div>
-                                                            </li>
-                                                            <li class="list-group-item">
-                                                                <div class="lecture-title">
-                                                                    <i class="fa fa-calendar"></i
-                                                                    ><span><a href="#">CS5610 06 SP23 Lecture</a></span>
-                                                                </div>
-                                                                <div class="lecture-info">
-                                                                    <span class="lecture-course"
-                                                                        >CS4550.12631.202410</span
-                                                                    >
-                                                                    <span class="date-time">Sep 11 at 6pm</span>
-                                                                </div>
-                                                            </li>
-                                                            <li class="list-group-item">
-                                                                <div class="lecture-title">
-                                                                    <i class="fa fa-calendar"></i
-                                                                    ><span
-                                                                        ><a href="#"
-                                                                            >CS5610 Web Development<br />
-                                                                            Summer 1 2023 - LECTURE</a
-                                                                        ></span
-                                                                    >
-                                                                </div>
-                                                                <div class="lecture-info">
-                                                                    <span class="lecture-course"
-                                                                        >CS4550.12631.202410</span
-                                                                    >
-                                                                    <span class="date-time">Sep 11 at 7pm</span>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                        <div>
-                                                            <a href="#">12 more in the next week...</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </ul>
                                         </td>
                                     </tr>
