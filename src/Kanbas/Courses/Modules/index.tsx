@@ -1,10 +1,20 @@
-import ModuleList from './List';
+import { FaCheck, FaEllipsisV } from "react-icons/fa";
+import ModuleList from "./List";
 function Modules() {
-    return (
-        <div>
-            <h2>Modules</h2>
-            <ModuleList />
-        </div>
-    );
+  return (
+    <div
+      className="col-12"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        margin: "20px 0",
+        padding: "20px",
+        height: "calc(100vh - 100px)",
+        overflowY: "auto",
+      }}
+    >
+      <ModuleList />
+    </div>
+  );
 }
 export default Modules;

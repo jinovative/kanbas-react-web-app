@@ -1,0 +1,27 @@
+.home-flex-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  padding: 20px;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.home-status-heading {
+  margin-top: 20px;
+}
+
+.lecture-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lecture-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-group-item {
+  border: none;
+}

@@ -5,22 +5,22 @@
         "number": "RS4550",
         "startDate": "2023-01-10",
         "endDate": "2023-05-15",
-        "image": "rocket-propulsion.png"
+        "image": "reactjs.jpg"
     },
     {
         "_id": "RS102",
-        "name": "Aerodynamics",
+        "name": "CS5800-01 SP24",
         "number": "RS4560",
         "startDate": "2023-01-10",
         "endDate": "2023-05-15",
-        "image": "aerodynamics.png"
+        "image": "001.png"
     },
     {
         "_id": "RS103",
-        "name": "Spacecraft Design",
+        "name": "Career Preparation",
         "number": "RS4570",
         "startDate": "2023-01-10",
         "endDate": "2023-05-15",
-        "image": "spaceship-design.png"
+        "image": "002.png"
     }
 ]
