@@ -1,123 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>3.3.4</h1>
-    <table >
-        <tr>
-            <td valign = "top">
-                <ul>
-                    <li><a href="/Kanbas/Account/Navigation/index.html">Account</a></li>
-                    <li><a href="/Kanbas/Dashboard/screen.html">Dashboard</a></li>
-                    <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
-                    <li><a href="/Kanbas/Calendar/index.html">Calendar</a></li>
-                    <li><a href="/Kanbas/Inbox/index.html">Inbox</a></li>
-                    <li><a href="/Kanbas/History/index.html">History</a></li>
-                    <li><a href="/Kanbas/Inbox/Studio.html">Studio</a></li>
-                    <li><a href="/Kanbas/Inbox/Commons.html">Commons</a></li>
-                    <li><a href="/Kanbas/Inbox/Help.html">Help</a></li>
-                </ul>
-                   
-            </td>
-            <td valign = "top">
-                <ul>
-                    <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
-                    <li><a href="/Kanbas/Courses/Modules/screen.html">Modules</a></li>
-                    <li><a href="/Kanbas/Courses/Piazza/index.html">Piazza</a></li>
-                    <li><a href="/Kanbas/Courses/Zoom/screen.html">Zoom Meetings</a></li>
-                    <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
-                    <li><a href="/Kanbas/Courses/Quizzes/screen.html">Quizzes</a></li>
-                    <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
-                    <li><a href="/Kanbas/Courses/People/screen.html">People</a></li>
-                    <li><a href="/Kanbas/Courses/Video/screen.html">Panopto Video</a></li>
-                    <li><a href="/Kanbas/Courses/Discussions/screen.html">Discussions</a></li>
-                    <li><a href="/Kanbas/Courses/Announcements/screen.html">Announcements</a></li>
-                    <li><a href="/Kanbas/Courses/Pages/screen.html">Pages</a></li>
-                    <li><a href="/Kanbas/Courses/Files/screen.html">Files</a></li>
-                    <li><a href="/Kanbas/Courses/Rubrics/screen.html">Rubrics</a></li>
-                    <li><a href="/Kanbas/Courses/Outcomes/screen.html">Outcomes</a></li>
-                    <li><a href="/Kanbas/Courses/Collaborations/screen.html">Collaborations</a></li>
-                    <li><a href="/Kanbas/Courses/Syllabus/screen.html">Syllabus</a></li>
-                    <li><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
-                </ul>
-            </td>
-            <td valign = "top">
-                <select>
-                    <option value="option1">SpeedGrader</option>
-                </select>
-                <h3>Assignment Name</h3>
-                <input type="text" placeholder="Enter text here" value="A1 - ENV + HTML">
-                <h3></h3>
-                <textarea cols="30" rows="2">This is the assignment description.</textarea>
-                <h3></h3>
-                <label>Points</label><br/>
-                <input type="text" placeholder="Enter points here" value="100">
-                <h3></h3>
-                <label>Assignment Group</label><br/>
-                <select>
-                    <option value="option1">ASSIGNMENTS</option>
-                </select>
-                <h3></h3>
-                <label>Display Grade as</label><br/>
-                <select>
-                    <option value="option1">Percentage</option>
-                </select>
-                <h3></h3>
-                <label>Submission Type</label><br/>
-                <select>
-                    <option value="option1">Online</option>
-                </select>
-                <h3></h3>
-                    <label>Online Entry Options</label>
-                        <br/>
-                        <input type="checkbox" value="Text Entry"
-                              name="check-genre"/>
-                        <label for="chkbox-comedy">Text Entry</label> <br/>
-                        
-                        <input type="checkbox" value="Website URL"
-                              name="check-genre"/>
-                        <label for="chkbox-drama">Website URL</label> <br/>
-                        
-                        <input type="checkbox" value="Media Recordings"
-                              name="check-genre"/>
-                        <label for="chkbox-scifi">Media Recordings</label> <br/>
-                        
-                        <input type="checkbox" value="Student Annotation"
-                              name="check-genre"/>
-                        <label for="chkbox-fantasy">Student Annotation</label> <br/>
-            
-                        <input type="checkbox" value="File Uploads"
-                        name="check-genre"/>
-                        <label for="chkbox-fantasy">File Uploads</label> <br/>
-                <h3></h3>
-                <label>Assign</label><br/>
-                <label>Assign to</label><br/>
-                <input type="text" placeholder="Assign to" value="Everyone">
-                
-                <h3></h3>
-                <label>Due</label><br/>
-                <input type="date"
-                value="2021-01-01"/><br/>
-            
-                <h3></h3>
-                <label>Available from</label><br/>
-                <input type="date"
-                value="2021-01-01"/><br/>
-            
-                <h3></h3>
-                <label>Until</label><br/>
-                <input type="date"
-                value="2021-01-01"/><br/>
-            
-                <h3></h3>
-                <button type="button">Cancel</button>
-                <button type="button">Save</button>
-            </td>
-        </tr>
-    </table>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.css" rel="stylesheet" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="/Kanbas/styles.css" />
+        <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" />
+
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <header class="col-auto p-0">
+                    <div class="col-auto p-0">
+                        <ul class="wd-kanbas-navigation">
+                            <ul class="wd-kanbas-navigation d-none d-lg-block">
+                                <li><a href="http://northeastern.edu">N</a></li>
+                                <li>
+                                    <a href="/Kanbas/Account/Profile/screen.html"> <i class="fa fa-user"></i>Account</a>
+                                </li>
+                                <li>
+                                    <a href="/Kanbas/Dashboard/screen.html">
+                                        <i class="fa fa-tachometer"></i> Dashboard</a
+                                    >
+                                </li>
+                                <li class="wd-active">
+                                    <a href="/Kanbas/Courses/Home/screen.html"> <i class="fa fa-book"></i>Courses</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa fa-calendar"></i> Calendar</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-inbox fa-2xl"></i><br />Inbox</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-regular fa-clock"></i>History</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-folder-tree"></i>Studio</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-solid fa-right-from-bracket"></i>Commons</a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fa-regular fa-circle-question"></i><br />Help</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </header>
+                <div class="col">
+                    <div class="row pt-3 pl-1 pr-1">
+                        <div class="d-flex justify-content-between w-100">
+                            <nav
+                                class="col-auto d-flex justify-content-center"
+                                aria-label="breadcrumb"
+                                style="--bs-breadcrumb-divider: '>'"
+                            >
+                                <ol
+                                    class="breadcrumb d-flex justify-content-center align-items-center"
+                                    style="font-size: larger; background-color: transparent"
+                                >
+                                    <li>
+                                        <button
+                                            class="menu-toggle btn btn-link pr-4"
+                                            style="border: none; background-color: transparent; color: red"
+                                        >
+                                            <i class="fa fa-bars fa-xl"></i>
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="breadcrumb-item"
+                                        style="border: none; background-color: transparent; color: red"
+                                    >
+                                        CS4550.16321.20410
+                                    </li>
+                                    <li
+                                        class="breadcrumb-item"
+                                        style="border: none; background-color: transparent; color: red"
+                                    >
+                                        Assignments
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">A1 - ENV</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    <hr class="separator-line" />
+                    <div class="row w-100">
+                        <div class="col-auto">
+                            <ul class="wd-navigation">
+                                <li>
+                                    <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                                </li>
+                                <li><a href="http://piazza.com">Piazza</a></li>
+                                <li><a href="#">Zoom</a></li>
+                                <li class="wd-active">
+                                    <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                                </li>
+                                <li><a href="#">Quizzes</a></li>
+                                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                                <li><a href="#">People</a></li>
+                                <li><a href="/Kanbas/Courses/Settings/screen.html">Setting</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col">
+                            <div class="input-group w-100">
+                                <div class="d-flex w-100">
+                                    <div class="ms-auto d-flex">
+                                        <span class="d-flex align-items-center pr-3" style="color: rgb(47, 129, 47)">
+                                            <i class="fa-solid fa-circle-check"></i> Published
+                                        </span>
+
+                                        <button class="btn btn-outline-secondary" type="button">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="separator-line" />
+                            <div class="container mt-4">
+                                <div class="mb-4">
+                                    <label for="assignmentName" class="form-label">Assignment Name</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="assignmentName"
+                                        value="A1 - ENV + HTML"
+                                    />
+                                </div>
+                                <div class="mb-4">
+                                    <textarea class="form-control" id="assignmentDescription" rows="3">
+This assignment describes how to install the development environment for creating and working with Web applications we will be developing this semester. We will add new content every week, pushing the code to a GitHub source repository, and then deploying the content to a remote server hosted on Netlify.</textarea
+                                    >
+                                </div>
+                                <div class="row justify-content-center mb-4">
+                                    <div class="col-3 d-flex justify-content-center align-items-center">
+                                        <label for="assignmentPoints" class="form-label">Points</label>
+                                    </div>
+                                    <div class="col-5 d-flex justify-content-center align-items-center">
+                                        <input type="number" class="form-control" id="assignmentPoints" value="100" />
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center mb-4">
+                                    <div class="col-3 d-flex justify-content-center align-items-center">
+                                        <label for="assignmentGroup" class="form-label">Assignment Group</label>
+                                    </div>
+                                    <div class="col-5 d-flex justify-content-center align-items-center">
+                                        <select class="form-select" id="assignmentGroup">
+                                            <option selected>ASSIGNMENTS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center mb-4 align-items-top">
+                                    <div class="col-3 d-flex justify-content-center align-items-center">
+                                        <label for="displayGrade" class="form-label">Display Grade as</label>
+                                    </div>
+                                    <div class="col-5 d-flex justify-content-center align-items-center">
+                                        <select class="form-select" id="displayGrade">
+                                            <option selected>Percentage</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center mb-5">
+                                    <div class="col-auto d-flex align-items-center">
+                                        <input type="checkbox" class="form-check-input me-2" id="doNotCountCheckbox" />
+                                        <label class="form-check-label" for="doNotCountCheckbox"
+                                            >Do not count this assignment towards the final grade</label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center mb-5">
+                                    <div class="col-3 d-flex justify-content-center align-items-top">
+                                        <label for="displayGrade" class="form-label">Assign</label>
+                                    </div>
+                                    <div class="row justify-content-center mb-4 col-5 d-flex justify-content-top">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row justify-content-center mb-4">
+                                                        <div class="mb-3">
+                                                            <label
+                                                                for="assignTo"
+                                                                class="form-label"
+                                                                style="font-weight: bold"
+                                                                >Assign to</label
+                                                            >
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="assignTo"
+                                                                value="Everyone"
+                                                            />
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label
+                                                                for="dueDate"
+                                                                class="form-label"
+                                                                style="font-weight: bold"
+                                                                >Due</label
+                                                            >
+                                                            <input
+                                                                type="datetime-local"
+                                                                class="form-control"
+                                                                id="dueDate"
+                                                                value="2023-09-18T23:59"
+                                                            />
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="mb-4 col-6 pr-0 pl-0">
+                                                                <label
+                                                                    for="availableFrom"
+                                                                    class="form-label"
+                                                                    style="font-weight: bold"
+                                                                    >Available from</label
+                                                                >
+                                                                <input
+                                                                    type="datetime-local"
+                                                                    class="form-control"
+                                                                    id="availableFrom"
+                                                                    value="2023-09-06T12:00"
+                                                                />
+                                                            </div>
+                                                            <div class="mb-4 col-6 pr-0 pl-0">
+                                                                <label
+                                                                    for="availableUntil"
+                                                                    class="form-label"
+                                                                    style="font-weight: bold"
+                                                                    >Until</label
+                                                                >
+                                                                <input
+                                                                    type="datetime-local"
+                                                                    class="form-control"
+                                                                    id="availableUntil"
+                                                                    value="2023-09-18T23:59"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="p-0 position-absolute bottom-0 start-50 translate-middle-x"
+                                                        >
+                                                            <button
+                                                                type="button"
+                                                                class="btn btn-primary btn-block"
+                                                                style="
+                                                                    background-color: rgb(201, 199, 199);
+                                                                    color: black;
+                                                                "
+                                                            >
+                                                                <i
+                                                                    class="fa-solid fa-plus"
+                                                                    style="color: rgb(114, 114, 114)"
+                                                                ></i>
+                                                                Add
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="separator-line" />
+                                    <div class="row">
+                                        <div class="col-auto justify-content-begin">
+                                            <input type="checkbox" class="form-check-input me-2" />
+                                            <label class="form-check-label" for="doNotCountCheckbox"
+                                                >Notify users that this content has changed</label
+                                            >
+                                        </div>
+                                        <div class="col d-flex justify-content-end">
+                                            <a href="\Kanbas/Courses/Assignments/screen.html"
+                                                ><button type="button" class="btn btn-secondary me-2">Cancel</button></a
+                                            >
+                                            <button type="button" class="btn btn-primary" style="background-color: red">
+                                                Save
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
