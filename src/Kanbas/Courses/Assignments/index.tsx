@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { FaCheckCircle, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { assignments } from "../../Database";
+
 function Assignments() {
   const { courseId } = useParams();
   const assignmentList = assignments.filter(
     (assignment) => assignment.course === courseId
   );
+
   return (
     <>
       <div
@@ -44,6 +47,9 @@ function Assignments() {
               </a>
             </div>
           </div>
+
+          {/* ================================================================= */}
+
           <ul className="list-group wd-modules">
             <li className="list-group-item">
               <div>
