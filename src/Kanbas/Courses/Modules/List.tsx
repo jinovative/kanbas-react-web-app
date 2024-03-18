@@ -74,28 +74,45 @@ function ModuleList() {
         {/* ===================================================================================== */}
 
         <ul className="list-group wd-modules">
-          <li className="list-group-item">
-            <button onClick={() => addModule(module)}>Add</button>
-            <button onClick={() => updateModule(module)}>Update</button>
-
-            <input
-              value={module.name}
-              onChange={(e) =>
-                setModule({
-                  ...module,
-                  name: e.target.value,
-                })
-              }
-            />
-            <textarea
-              value={module.description}
-              onChange={(e) =>
-                setModule({
-                  ...module,
-                  description: e.target.value,
-                })
-              }
-            />
+          <li className="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <input
+                type="text"
+                className="form-control mb-2" // Bootstrap class for inputs with margin-bottom
+                value={module.name}
+                onChange={(e) =>
+                  setModule({
+                    ...module,
+                    name: e.target.value,
+                  })
+                }
+              />
+              <textarea
+                className="form-control" // Bootstrap class for textareas
+                value={module.description}
+                onChange={(e) =>
+                  setModule({
+                    ...module,
+                    description: e.target.value,
+                  })
+                }
+              />
+            </div>
+            <div>
+              <button
+                className="module_button btn btn-primary"
+                style={{ backgroundColor: "blue", color: "white" }}
+                onClick={() => updateModule(module)}
+              >
+                Update
+              </button>
+              <button
+                className="module_button btn btn-secondary"
+                onClick={() => addModule(module)}
+              >
+                Add
+              </button>
+            </div>
           </li>
 
           {moduleList
@@ -106,15 +123,23 @@ function ModuleList() {
                 className="list-group-item"
                 onClick={() => setSelectedModule(module)}
               >
-                <button onClick={() => deleteModule(module)}>Delete</button>
-                <button
-                  onClick={(event) => {
-                    setModule(module);
-                  }}
-                >
-                  Edit
-                </button>
-
+                <div>
+                  <button
+                    className="module_button btn btn-primary"
+                    style={{ backgroundColor: "red", color: "white" }}
+                    onClick={() => deleteModule(module)}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className="module_button btn btn-secondary"
+                    onClick={(event) => {
+                      setModule(module);
+                    }}
+                  >
+                    Edit
+                  </button>
+                </div>
                 <div>
                   <FaEllipsisV className="me-2" />
                   {module.name}
