@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 import { useSelector, useDispatch } from "react-redux";
-import { addModule, deleteModule, updateModule, setModule } from "./reducer";
+import {
+  addModule,
+  deleteModule,
+  updateModule,
+  setModule,
+  setModules,
+} from "./reducer";
+import { findModulesForCourse, createModule } from "./client";
 import { KanbasState } from "../../store";
 
 import "./index.css";
-import { modules } from "../../Database";
+
 import {
   FaCheck,
   FaEllipsisV,
@@ -14,8 +21,19 @@ import {
   FaPlusCircle,
 } from "react-icons/fa";
 
+import Database from "../../Database";
+
 function ModuleList() {
+  const { modules } = Database;
+  const dispatch = useDispatch();
   const { courseId } = useParams();
+
+  useEffect(() => {
+    findModulesForCourse(courseId).then((modules) =>
+      dispatch(setModules(modules))
+    );
+  }, [courseId]);
+
   const initialModulesList = modules.filter(
     (module) => module.course === courseId
   );
@@ -36,6 +54,7 @@ function ModuleList() {
     };
     setModuleList([newModuleWithId, ...moduleList]);
   };
+
   const deleteModule = (module: any) => {
     const newModuleList = moduleList.filter((m) => m._id !== module._id);
     setModuleList(newModuleList);
