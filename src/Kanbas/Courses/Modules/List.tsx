@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-
+import * as client from "./client";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  addModule,
-  deleteModule,
-  updateModule,
+  addModule as addModuleAction,
+  deleteModule as deleteModuleAction,
+  updateModule as updateModuleAction,
   setModule,
   setModules,
 } from "./reducer";
@@ -22,6 +22,7 @@ import {
 } from "react-icons/fa";
 
 import Database from "../../Database";
+import { add } from "../../../Labs/a4/ReduxExamples/AddRedux/addReducer";
 
 function ModuleList() {
   const { modules } = Database;
@@ -53,6 +54,20 @@ function ModuleList() {
       _id: new Date().getTime().toString(),
     };
     setModuleList([newModuleWithId, ...moduleList]);
+  };
+  const handleAddModule = () => {
+    createModule(courseId, module).then((module) => {
+      dispatch(addModuleAction(module));
+    });
+  };
+  const handleDeleteModule = (moduleId: string) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModuleAction(moduleId));
+    });
+  };
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModuleAction(module));
   };
 
   const deleteModule = (module: any) => {
@@ -121,13 +136,13 @@ function ModuleList() {
               <button
                 className="module_button btn btn-primary"
                 style={{ backgroundColor: "blue", color: "white" }}
-                onClick={() => updateModule(module)}
+                onClick={handleUpdateModule}
               >
                 Update
               </button>
               <button
                 className="module_button btn btn-secondary"
-                onClick={() => addModule(module)}
+                onClick={handleAddModule}
               >
                 Add
               </button>
@@ -146,7 +161,7 @@ function ModuleList() {
                   <button
                     className="module_button btn btn-primary"
                     style={{ backgroundColor: "red", color: "white" }}
-                    onClick={() => deleteModule(module)}
+                    onClick={() => handleDeleteModule(module._id)}
                   >
                     Delete
                   </button>

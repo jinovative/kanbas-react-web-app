@@ -4,6 +4,7 @@ import axios from "axios";
 import store from "./store";
 import { Provider } from "react-redux";
 
+import Account from "./Account";
 import KanbasNavigation from "./Navigation";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
@@ -12,12 +13,15 @@ import Courses from "./Courses";
 function Kanbas() {
   const [courses, setCourses] = useState<any[]>([]);
   const COURSES_API = "http://localhost:4000/api/courses";
-  const findAllCourses = async () => {
-    const response = await axios.get(COURSES_API);
-    setCourses(response.data);
-  };
+  // const findAllCourses = async () => {
+  //   const response = await axios.get(COURSES_API);
+  //   setCourses(response.data);
+  // };
   useEffect(() => {
-    findAllCourses();
+    const findAllCourses = async () => {
+      const response = await axios.get(COURSES_API);
+      setCourses(response.data);
+    };
   }, []);
 
   const [course, setCourse] = useState({
@@ -56,6 +60,7 @@ function Kanbas() {
         <KanbasNavigation />
         <div style={{ flexGrow: 1 }}>
           <Routes>
+            <Route path="/Account/*" element={<Account />} />
             <Route path="/" element={<Navigate to="Dashboard" />} />
             <Route path="Account" element={<h1>Account</h1>} />
             <Route

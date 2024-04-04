@@ -1,10 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
-import Database from "../../Database";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const { modules } = Database;
+interface Module {
+  name: string;
+  description: string;
+  _id?: string;
+  course: string;
+  lessons: [];
+}
+
 const initialState = {
-  // modules: [],
-  modules: modules,
+  modules: [] as Module[],
+
   module: { name: "New Module 123", description: "New Description" },
 };
 
@@ -17,11 +23,10 @@ const modulesSlice = createSlice({
     },
 
     addModule: (state, action) => {
-      state.modules = [
-        { ...action.payload, _id: new Date().getTime().toString() },
-        ...state.modules,
-      ];
+      state.modules = [action.payload, ...state.modules];
     },
+
+    //===============================================
     deleteModule: (state, action) => {
       state.modules = state.modules.filter(
         (module) => module._id !== action.payload
