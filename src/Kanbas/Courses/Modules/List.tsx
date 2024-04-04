@@ -9,20 +9,17 @@ import {
   setModule,
   setModules,
 } from "./reducer";
-import { findModulesForCourse, createModule } from "./client";
+
 import { KanbasState } from "../../store";
 
 import "./index.css";
-
 import {
   FaCheck,
   FaEllipsisV,
   FaCheckCircle,
   FaPlusCircle,
 } from "react-icons/fa";
-
 import Database from "../../Database/index.js";
-import { add } from "../../../Labs/a4/ReduxExamples/AddRedux/addReducer";
 
 function ModuleList() {
   const { modules } = Database;
@@ -30,9 +27,9 @@ function ModuleList() {
   const { courseId } = useParams();
 
   useEffect(() => {
-    findModulesForCourse(courseId).then((modules) =>
-      dispatch(setModules(modules))
-    );
+    client
+      .findModulesForCourse(courseId)
+      .then((modules) => dispatch(setModules(modules)));
   }, [courseId]);
 
   const initialModulesList = modules.filter(
@@ -47,15 +44,8 @@ function ModuleList() {
     course: courseId,
   });
 
-  const addModule = (newModule: any) => {
-    const newModuleWithId = {
-      ...newModule,
-      _id: new Date().getTime().toString(),
-    };
-    setModuleList([newModuleWithId, ...moduleList]);
-  };
   const handleAddModule = () => {
-    createModule(courseId, module).then((module) => {
+    client.createModule(courseId, module).then((module) => {
       dispatch(addModuleAction(module));
     });
   };
@@ -69,6 +59,13 @@ function ModuleList() {
     dispatch(updateModuleAction(module));
   };
 
+  const addModule = (newModule: any) => {
+    const newModuleWithId = {
+      ...newModule,
+      _id: new Date().getTime().toString(),
+    };
+    setModuleList([newModuleWithId, ...moduleList]);
+  };
   const deleteModule = (module: any) => {
     const newModuleList = moduleList.filter((m) => m._id !== module._id);
     setModuleList(newModuleList);

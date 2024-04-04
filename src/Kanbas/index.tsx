@@ -12,7 +12,8 @@ import Courses from "./Courses";
 
 function Kanbas() {
   const [courses, setCourses] = useState<any[]>([]);
-  const COURSES_API = "http://localhost:4000/api/courses";
+  const COURSES_API =
+    "https://kanbas-node-server-app-t3qo.onrender.com/api/courses";
 
   useEffect(() => {
     const findAllCourses = async () => {

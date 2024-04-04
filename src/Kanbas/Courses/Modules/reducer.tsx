@@ -10,7 +10,6 @@ interface Module {
 
 const initialState = {
   modules: [] as Module[],
-
   module: { name: "New Module 123", description: "New Description" },
 };
 
