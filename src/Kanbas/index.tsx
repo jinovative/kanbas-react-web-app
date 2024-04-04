@@ -13,15 +13,13 @@ import Courses from "./Courses";
 function Kanbas() {
   const [courses, setCourses] = useState<any[]>([]);
   const COURSES_API = "http://localhost:4000/api/courses";
-  // const findAllCourses = async () => {
-  //   const response = await axios.get(COURSES_API);
-  //   setCourses(response.data);
-  // };
+
   useEffect(() => {
     const findAllCourses = async () => {
       const response = await axios.get(COURSES_API);
       setCourses(response.data);
     };
+    findAllCourses();
   }, []);
 
   const [course, setCourse] = useState({

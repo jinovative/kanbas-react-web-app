@@ -22,11 +22,14 @@ const modulesSlice = createSlice({
       state.modules = action.payload;
     },
 
+    setModule: (state, action) => {
+      state.module = action.payload;
+    },
+
     addModule: (state, action) => {
       state.modules = [action.payload, ...state.modules];
     },
 
-    //===============================================
     deleteModule: (state, action) => {
       state.modules = state.modules.filter(
         (module) => module._id !== action.payload
@@ -40,9 +43,6 @@ const modulesSlice = createSlice({
           return module;
         }
       });
-    },
-    setModule: (state, action) => {
-      state.module = action.payload;
     },
   },
 });

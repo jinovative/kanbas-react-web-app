@@ -21,7 +21,7 @@ import {
   FaPlusCircle,
 } from "react-icons/fa";
 
-import Database from "../../Database";
+import Database from "../../Database/index.js";
 import { add } from "../../../Labs/a4/ReduxExamples/AddRedux/addReducer";
 
 function ModuleList() {
@@ -41,7 +41,6 @@ function ModuleList() {
   const [moduleList, setModuleList] = useState(initialModulesList);
   const [selectedModule, setSelectedModule] = useState(moduleList[0]);
 
-  // ===================================================================
   const [module, setModule] = useState({
     name: "New Module",
     description: "New Description",
@@ -105,14 +104,12 @@ function ModuleList() {
         </div>
         <hr className="separator-line second-nav-bar" />
 
-        {/* ===================================================================================== */}
-
         <ul className="list-group wd-modules">
           <li className="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <input
                 type="text"
-                className="form-control mb-2" // Bootstrap class for inputs with margin-bottom
+                className="form-control mb-2"
                 value={module.name}
                 onChange={(e) =>
                   setModule({
@@ -122,7 +119,7 @@ function ModuleList() {
                 }
               />
               <textarea
-                className="form-control" // Bootstrap class for textareas
+                className="form-control"
                 value={module.description}
                 onChange={(e) =>
                   setModule({
