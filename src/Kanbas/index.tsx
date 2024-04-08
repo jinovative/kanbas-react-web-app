@@ -10,10 +10,13 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
 
+const API_BASE = process.env.REACT_APP_API_BASE;
+
 function Kanbas() {
   const [courses, setCourses] = useState<any[]>([]);
   const COURSES_API =
     "https://kanbas-node-server-app-t3qo.onrender.com/api/courses";
+  // const COURSES_API = `${API_BASE}/api/courses`;
 
   useEffect(() => {
     const findAllCourses = async () => {
@@ -61,7 +64,6 @@ function Kanbas() {
           <Routes>
             <Route path="/Account/*" element={<Account />} />
             <Route path="/" element={<Navigate to="Dashboard" />} />
-            <Route path="Account" element={<h1>Account</h1>} />
             <Route
               path="Dashboard"
               element={

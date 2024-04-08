@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { User } from "./client";
 import * as client from "./client";
 export default function Signin() {
-  const [credentials, setCredentials] = useState<User>({
+  const [credentials, setCredentials] = useState<client.User>({
     _id: "",
     username: "",
     password: "",
@@ -24,14 +23,19 @@ export default function Signin() {
         onChange={(e) =>
           setCredentials({ ...credentials, username: e.target.value })
         }
-      />
+      />{" "}
+      <br />
       <input
         value={credentials.password}
         onChange={(e) =>
           setCredentials({ ...credentials, password: e.target.value })
         }
-      />
-      <button onClick={signin}> Signin </button>
+      />{" "}
+      <br />
+      <button className="btn btn-primary " onClick={signin}>
+        {" "}
+        Signin{" "}
+      </button>
     </div>
   );
 }
