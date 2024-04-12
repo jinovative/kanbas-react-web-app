@@ -15,6 +15,10 @@ export default function Signin() {
     await client.signin(credentials);
     navigate("/Kanbas/Account/Profile");
   };
+
+  const redirectToSignup = () => {
+    navigate("/Kanbas/Account/Signup"); // Corrected path to match the route
+  };
   return (
     <div>
       <h1>Signin</h1>
@@ -35,6 +39,10 @@ export default function Signin() {
       <button className="btn btn-primary " onClick={signin}>
         {" "}
         Signin{" "}
+      </button>
+      <button className="btn btn-warning" onClick={redirectToSignup}>
+        {" "}
+        signup
       </button>
     </div>
   );

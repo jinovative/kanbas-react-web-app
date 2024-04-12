@@ -68,6 +68,7 @@ export default function UserTable() {
   useEffect(() => {
     fetchUsers();
   }, []);
+
   return (
     <div>
       <select

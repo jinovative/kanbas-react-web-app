@@ -14,6 +14,7 @@ export default function Signup() {
       setError("An unknown error occurred");
     }
   };
+
   return (
     <div>
       <h1>Signup</h1>
