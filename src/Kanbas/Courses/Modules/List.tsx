@@ -1,63 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router";
-import * as client from "./client";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  addModule as addModuleAction,
-  deleteModule as deleteModuleAction,
-  updateModule as updateModuleAction,
-  setModule,
-  setModules,
-} from "./reducer";
 
+import { useSelector, useDispatch } from "react-redux";
+import { addModule, deleteModule, updateModule, setModule } from "./reducer";
 import { KanbasState } from "../../store";
 
 import "./index.css";
+import { modules } from "../../Database";
 import {
   FaCheck,
   FaEllipsisV,
   FaCheckCircle,
   FaPlusCircle,
 } from "react-icons/fa";
-import Database from "../../Database/index.js";
 
 function ModuleList() {
-  const { modules } = Database;
-  const dispatch = useDispatch();
   const { courseId } = useParams();
-
-  useEffect(() => {
-    client
-      .findModulesForCourse(courseId)
-      .then((modules) => dispatch(setModules(modules)));
-  }, [courseId]);
-
   const initialModulesList = modules.filter(
     (module) => module.course === courseId
   );
   const [moduleList, setModuleList] = useState(initialModulesList);
   const [selectedModule, setSelectedModule] = useState(moduleList[0]);
 
+  // ===================================================================
   const [module, setModule] = useState({
     name: "New Module",
     description: "New Description",
     course: courseId,
   });
-
-  const handleAddModule = () => {
-    client.createModule(courseId, module).then((module) => {
-      dispatch(addModuleAction(module));
-    });
-  };
-  const handleDeleteModule = (moduleId: string) => {
-    client.deleteModule(moduleId).then((status) => {
-      dispatch(deleteModuleAction(moduleId));
-    });
-  };
-  const handleUpdateModule = async () => {
-    const status = await client.updateModule(module);
-    dispatch(updateModuleAction(module));
-  };
 
   const addModule = (newModule: any) => {
     const newModuleWithId = {
@@ -101,12 +71,14 @@ function ModuleList() {
         </div>
         <hr className="separator-line second-nav-bar" />
 
+        {/* ===================================================================================== */}
+
         <ul className="list-group wd-modules">
           <li className="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <input
                 type="text"
-                className="form-control mb-2"
+                className="form-control mb-2" // Bootstrap class for inputs with margin-bottom
                 value={module.name}
                 onChange={(e) =>
                   setModule({
@@ -116,7 +88,7 @@ function ModuleList() {
                 }
               />
               <textarea
-                className="form-control"
+                className="form-control" // Bootstrap class for textareas
                 value={module.description}
                 onChange={(e) =>
                   setModule({
@@ -130,13 +102,13 @@ function ModuleList() {
               <button
                 className="module_button btn btn-primary"
                 style={{ backgroundColor: "blue", color: "white" }}
-                onClick={handleUpdateModule}
+                onClick={() => updateModule(module)}
               >
                 Update
               </button>
               <button
                 className="module_button btn btn-secondary"
-                onClick={handleAddModule}
+                onClick={() => addModule(module)}
               >
                 Add
               </button>
@@ -155,7 +127,7 @@ function ModuleList() {
                   <button
                     className="module_button btn btn-primary"
                     style={{ backgroundColor: "red", color: "white" }}
-                    onClick={() => handleDeleteModule(module._id)}
+                    onClick={() => deleteModule(module)}
                   >
                     Delete
                   </button>

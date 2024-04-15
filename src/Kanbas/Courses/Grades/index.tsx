@@ -1,8 +1,6 @@
-import Database from "../../Database/index.js";
-
+import { assignments, enrollments, grades, users } from "../../Database";
 import { useParams } from "react-router-dom";
 function Grades() {
-  const { assignments, enrollments, grades, users } = Database;
   const { courseId } = useParams();
   const as = assignments.filter((assignment) => assignment.course === courseId);
   const es = enrollments.filter((enrollment) => enrollment.course === courseId);

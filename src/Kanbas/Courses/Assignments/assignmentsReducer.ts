@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import db from "../../Database/index.js";
+import * as db from "../../Database";
 
 interface AssignmentsState {
   assignments: Assignment[];
