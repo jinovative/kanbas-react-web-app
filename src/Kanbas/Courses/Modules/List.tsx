@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-
+import * as client from "./client";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  addModule,
-  deleteModule,
-  updateModule,
+  addModule as addModuleAction,
+  deleteModule as deleteModuleAction,
+  updateModule as updateModuleAction,
   setModule,
   setModules,
 } from "./reducer";
-import { findModulesForCourse, createModule } from "./client";
+
 import { KanbasState } from "../../store";
 
 import "./index.css";
-
 import {
   FaCheck,
   FaEllipsisV,
   FaCheckCircle,
   FaPlusCircle,
 } from "react-icons/fa";
-
-import Database from "../../Database";
+import Database from "../../Database/index.js";
 
 function ModuleList() {
   const { modules } = Database;
@@ -29,9 +27,9 @@ function ModuleList() {
   const { courseId } = useParams();
 
   useEffect(() => {
-    findModulesForCourse(courseId).then((modules) =>
-      dispatch(setModules(modules))
-    );
+    client
+      .findModulesForCourse(courseId)
+      .then((modules) => dispatch(setModules(modules)));
   }, [courseId]);
 
   const initialModulesList = modules.filter(
@@ -40,12 +38,26 @@ function ModuleList() {
   const [moduleList, setModuleList] = useState(initialModulesList);
   const [selectedModule, setSelectedModule] = useState(moduleList[0]);
 
-  // ===================================================================
   const [module, setModule] = useState({
     name: "New Module",
     description: "New Description",
     course: courseId,
   });
+
+  const handleAddModule = () => {
+    client.createModule(courseId, module).then((module) => {
+      dispatch(addModuleAction(module));
+    });
+  };
+  const handleDeleteModule = (moduleId: string) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModuleAction(moduleId));
+    });
+  };
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModuleAction(module));
+  };
 
   const addModule = (newModule: any) => {
     const newModuleWithId = {
@@ -54,7 +66,6 @@ function ModuleList() {
     };
     setModuleList([newModuleWithId, ...moduleList]);
   };
-
   const deleteModule = (module: any) => {
     const newModuleList = moduleList.filter((m) => m._id !== module._id);
     setModuleList(newModuleList);
@@ -90,14 +101,12 @@ function ModuleList() {
         </div>
         <hr className="separator-line second-nav-bar" />
 
-        {/* ===================================================================================== */}
-
         <ul className="list-group wd-modules">
           <li className="list-group-item d-flex justify-content-between align-items-center">
             <div>
               <input
                 type="text"
-                className="form-control mb-2" // Bootstrap class for inputs with margin-bottom
+                className="form-control mb-2"
                 value={module.name}
                 onChange={(e) =>
                   setModule({
@@ -107,7 +116,7 @@ function ModuleList() {
                 }
               />
               <textarea
-                className="form-control" // Bootstrap class for textareas
+                className="form-control"
                 value={module.description}
                 onChange={(e) =>
                   setModule({
@@ -121,13 +130,13 @@ function ModuleList() {
               <button
                 className="module_button btn btn-primary"
                 style={{ backgroundColor: "blue", color: "white" }}
-                onClick={() => updateModule(module)}
+                onClick={handleUpdateModule}
               >
                 Update
               </button>
               <button
                 className="module_button btn btn-secondary"
-                onClick={() => addModule(module)}
+                onClick={handleAddModule}
               >
                 Add
               </button>
@@ -146,7 +155,7 @@ function ModuleList() {
                   <button
                     className="module_button btn btn-primary"
                     style={{ backgroundColor: "red", color: "white" }}
-                    onClick={() => deleteModule(module)}
+                    onClick={() => handleDeleteModule(module._id)}
                   >
                     Delete
                   </button>

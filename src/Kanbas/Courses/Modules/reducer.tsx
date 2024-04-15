@@ -1,10 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
-import Database from "../../Database";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const { modules } = Database;
+interface Module {
+  name: string;
+  description: string;
+  _id?: string;
+  course: string;
+  lessons: [];
+}
+
 const initialState = {
-  // modules: [],
-  modules: modules,
+  modules: [] as Module[],
   module: { name: "New Module 123", description: "New Description" },
 };
 
@@ -16,12 +21,14 @@ const modulesSlice = createSlice({
       state.modules = action.payload;
     },
 
-    addModule: (state, action) => {
-      state.modules = [
-        { ...action.payload, _id: new Date().getTime().toString() },
-        ...state.modules,
-      ];
+    setModule: (state, action) => {
+      state.module = action.payload;
     },
+
+    addModule: (state, action) => {
+      state.modules = [action.payload, ...state.modules];
+    },
+
     deleteModule: (state, action) => {
       state.modules = state.modules.filter(
         (module) => module._id !== action.payload
@@ -35,9 +42,6 @@ const modulesSlice = createSlice({
           return module;
         }
       });
-    },
-    setModule: (state, action) => {
-      state.module = action.payload;
     },
   },
 });
