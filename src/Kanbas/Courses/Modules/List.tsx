@@ -10,8 +10,6 @@ import {
   setModules,
 } from "./reducer";
 
-import { KanbasState } from "../../store";
-
 import "./index.css";
 import {
   FaCheck,
