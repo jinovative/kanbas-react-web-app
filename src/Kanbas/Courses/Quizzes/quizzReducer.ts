@@ -17,9 +17,9 @@ export interface Quiz {
   _id: string;
   title: string;
   course: string;
-  description: string; // Add this line
-  quizType: string; // Add this line
-  assignmentGroup: string; // Add this line
+  description: string;
+  quizType: string;
+  assignmentGroup: string;
   options: {
     question: string;
     shuffleAnswers: boolean;
@@ -28,32 +28,37 @@ export interface Quiz {
   };
 }
 
-interface Database {
-  courses: any[];
-  modules: any[];
-  assignments: any[];
-  users: any[];
-  grades: any[];
-  enrollments: any[];
-  quizzes: Quiz[];
+export interface Question {
+  title: string;
+  type: string;
+  points: number;
+  questionText: string;
+  answers: boolean;
 }
-
+export interface Answer {
+  text: string;
+  isCorrect: boolean;
+}
 interface QuizzesState {
   quizzes: Quiz[];
+  currentQuiz?: Quiz;
+  currentQuestion?: Question;
 }
 
 const initialState: QuizzesState = {
   quizzes: loadQuizzesFromStorage(),
+  currentQuiz: undefined,
+  currentQuestion: undefined,
 };
 export const selectQuizById = (state: KanbasState, quizId?: string) => {
   const quiz = state.quizzes.quizzes.find((quiz) => quiz._id === quizId);
   return {
-    ...quiz, // spread existing quiz properties
+    ...quiz,
     options: quiz?.options || {
       shuffleAnswers: false,
       timeLimit: 0,
       multipleAttempts: false,
-    }, // ensure options always exists
+    },
   };
 };
 const quizzesSlice = createSlice({
@@ -82,7 +87,14 @@ const quizzesSlice = createSlice({
         quizzes: state.quizzes.filter((quiz) => quiz.course === action.payload),
       };
     },
+    setCurrentQuiz: (state, action: PayloadAction<Quiz>) => {
+      state.currentQuiz = action.payload;
+    },
+    setCurrentQuestion: (state, action: PayloadAction<Question>) => {
+      state.currentQuestion = action.payload;
+    },
   },
+
   extraReducers: (builder) => {
     builder.addCase(fetchQuizDetails.fulfilled, (state, action) => {
       const quiz = action.payload;
@@ -133,3 +145,8 @@ export const saveQuizDetails = createAsyncThunk(
     }
   }
 );
+
+export const setCurrentQuestion = (question: any) => ({
+  type: "SET_CURRENT_QUESTION",
+  payload: question,
+});

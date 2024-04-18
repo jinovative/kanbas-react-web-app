@@ -14,6 +14,7 @@ export interface KanbasState {
     assignments: Assignment[];
   };
   quizzes: {
+    currentQuiz: any;
     quizzes: Quiz[];
   };
 }
