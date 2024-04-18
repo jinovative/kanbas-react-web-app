@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { addQuiz, updateQuiz } from "../quizzReducer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addQuiz, updateQuiz, selectQuizById } from "../quizzReducer";
+import { KanbasState } from "../../../store";
 interface Answer {
   text: string;
   isCorrect: boolean;
@@ -122,7 +123,6 @@ function QuizQuestionEditor() {
               }
             >
               <option value="Multiple Choice">Multiple Choice</option>
-              {/* Add other question types as options */}
             </select>
           </div>
           <div className="form-group">

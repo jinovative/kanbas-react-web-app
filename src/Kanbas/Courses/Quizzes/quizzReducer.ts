@@ -2,11 +2,30 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import db from "../../Database/index.js";
 import { KanbasState } from "../../store/index.js";
 
-// Define the Quiz type
+const QUIZZES_STORAGE_KEY = "kanbas_quizzes";
+
+function saveQuizzesToStorage(quizzes: Quiz[]) {
+  localStorage.setItem(QUIZZES_STORAGE_KEY, JSON.stringify(quizzes));
+}
+
+function loadQuizzesFromStorage(): Quiz[] {
+  const storedQuizzes = localStorage.getItem(QUIZZES_STORAGE_KEY);
+  return storedQuizzes ? JSON.parse(storedQuizzes) : [];
+}
+
 export interface Quiz {
   _id: string;
   title: string;
   course: string;
+  description: string; // Add this line
+  quizType: string; // Add this line
+  assignmentGroup: string; // Add this line
+  options: {
+    question: string;
+    shuffleAnswers: boolean;
+    timeLimit: number;
+    multipleAttempts: boolean;
+  };
 }
 
 interface Database {
@@ -19,28 +38,32 @@ interface Database {
   quizzes: Quiz[];
 }
 
-// Cast the imported db object to the Database type
-const typedDb = db as Database;
-
-// State interface
 interface QuizzesState {
   quizzes: Quiz[];
 }
 
-// Initial state using local db
 const initialState: QuizzesState = {
-  quizzes: typedDb.quizzes || [],
+  quizzes: loadQuizzesFromStorage(),
 };
-
-// Slice definition
+export const selectQuizById = (state: KanbasState, quizId?: string) => {
+  const quiz = state.quizzes.quizzes.find((quiz) => quiz._id === quizId);
+  return {
+    ...quiz, // spread existing quiz properties
+    options: quiz?.options || {
+      shuffleAnswers: false,
+      timeLimit: 0,
+      multipleAttempts: false,
+    }, // ensure options always exists
+  };
+};
 const quizzesSlice = createSlice({
   name: "quizzes",
   initialState,
   reducers: {
-    addQuiz: (state, action: PayloadAction<Quiz>) => {
+    addQuiz: (state, action) => {
       state.quizzes.push(action.payload);
     },
-    updateQuiz: (state, action: PayloadAction<Quiz>) => {
+    updateQuiz: (state, action) => {
       const index = state.quizzes.findIndex(
         (quiz) => quiz._id === action.payload._id
       );
@@ -52,6 +75,7 @@ const quizzesSlice = createSlice({
       state.quizzes = state.quizzes.filter(
         (quiz) => quiz._id !== action.payload
       );
+      saveQuizzesToStorage(state.quizzes);
     },
     findQuizzesForCourse: (state, action: PayloadAction<string>) => {
       return {
@@ -61,14 +85,10 @@ const quizzesSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchQuizDetails.fulfilled, (state, action) => {
-      // Assuming action.payload contains the fetched quiz details
       const quiz = action.payload;
       if (quiz) {
-        // You can decide how to merge this quiz into your existing state
-        // For instance, you might want to update a specific quiz or add a new one
       }
     });
-    // Add cases for pending and rejected if necessary
   },
 });
 export const getQuizzesForCourse = (state: KanbasState, courseId: string) => {
@@ -87,14 +107,13 @@ export const selectQuizzesForCourse = (
 export const { addQuiz, updateQuiz, deleteQuiz, findQuizzesForCourse } =
   quizzesSlice.actions;
 export default quizzesSlice.reducer;
+
 export const fetchQuizDetails = createAsyncThunk(
   "quizzes/fetchQuizDetails",
   async (
     { courseId, quizId }: { courseId: string; quizId: string },
     { getState }
   ) => {
-    // Replace this with the actual logic to fetch quiz details
-    // For example, an API call would go here
     const state = getState() as KanbasState;
     return state.quizzes.quizzes.find(
       (quiz) => quiz._id === quizId && quiz.course === courseId
@@ -102,19 +121,15 @@ export const fetchQuizDetails = createAsyncThunk(
   }
 );
 
-// Async thunk for saving quiz details
 export const saveQuizDetails = createAsyncThunk(
   "quizzes/saveQuizDetails",
   async (quizDetails: Quiz, { getState }) => {
-    // Replace this with the actual logic to save quiz details
-    // For example, an API call would go here
     const state = getState() as KanbasState;
     const index = state.quizzes.quizzes.findIndex(
       (quiz) => quiz._id === quizDetails._id
     );
     if (index !== -1) {
-      state.quizzes.quizzes[index] = quizDetails; // This mutation is just illustrative
-      // Normally you would perform an API call and handle the response
+      state.quizzes.quizzes[index] = quizDetails;
     }
   }
 );

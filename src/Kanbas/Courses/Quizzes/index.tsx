@@ -1,20 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  deleteQuiz,
-  addQuiz,
-  selectQuizzesForCourse,
-  getQuizzesForCourse,
-} from "./quizzReducer";
+import { deleteQuiz, addQuiz, getQuizzesForCourse } from "./quizzReducer";
 import { KanbasState } from "../../store";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle } from "react-icons/fa";
-
-interface Quiz {
-  _id: string;
-  title: string;
-  course: string;
-}
 
 function Quizzes() {
   const navigate = useNavigate();

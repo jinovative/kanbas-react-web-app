@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addQuiz, updateQuiz } from "../quizzReducer";
+import {
+  addQuiz,
+  updateQuiz,
+  getQuizzesForCourse,
+  selectQuizById,
+} from "../quizzReducer";
+import { KanbasState } from "../../../store";
 
 function QuizDetailEditor() {
   const dispatch = useDispatch();
@@ -10,8 +16,11 @@ function QuizDetailEditor() {
   const courseId = useParams().courseId as string;
   const isNewQuiz = !quizId;
 
+  const quizFromStore = useSelector((state: KanbasState) =>
+    selectQuizById(state, quizId)
+  );
   const [quiz, setQuiz] = useState({
-    _id: quizId || new Date().getTime().toString(),
+    _id: quizId || `quiz-${Date.now()}`,
     title: "",
     course: courseId,
     description: "",
@@ -24,14 +33,26 @@ function QuizDetailEditor() {
     },
   });
 
-  const handleSave = () => {
-    if (isNewQuiz) {
-      dispatch(addQuiz(quiz));
-    } else {
-      dispatch(updateQuiz(quiz));
-    }
-    navigate(`/Kanbas/Courses/${courseId}/Quizzes`);
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setQuiz({ ...quiz, [name]: value });
   };
+  useEffect(() => {
+    if (quizFromStore) {
+      setQuiz({
+        ...quiz,
+        ...quizFromStore,
+        options: {
+          shuffleAnswers: quizFromStore.options?.shuffleAnswers || false,
+          timeLimit: quizFromStore.options?.timeLimit || 0,
+          multipleAttempts: quizFromStore.options?.multipleAttempts || false,
+        },
+      });
+    }
+  }, [quizId]);
+  // ========================================
   const [activeTab, setActiveTab] = useState<"detail" | "question">("detail");
   const handleTabChange = (tabName: "detail" | "question") => {
     setActiveTab(tabName);
@@ -39,23 +60,13 @@ function QuizDetailEditor() {
       navigate(`/Kanbas/Courses/${courseId}/Quizzes/${quizId}/question`);
     }
   };
-
-  // ========================================
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setQuiz({ ...quiz, [name]: value });
-  };
-
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.target;
-    setQuiz({ ...quiz, options: { ...quiz.options, [name]: checked } });
-  };
-
-  const handleNumberInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setQuiz({ ...quiz, options: { ...quiz.options, [name]: Number(value) } });
+  const handleSave = () => {
+    if (isNewQuiz) {
+      dispatch(addQuiz(quiz));
+    } else {
+      dispatch(updateQuiz(quiz));
+    }
+    navigate(`/Kanbas/Courses/${courseId}/Quizzes`);
   };
   // ========================================
 
