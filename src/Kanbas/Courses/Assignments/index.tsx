@@ -10,7 +10,6 @@ function Assignments() {
   const dispatch = useDispatch();
   const { courseId } = useParams<{ courseId: string }>();
 
-  // useSelector의 타입을 수정합니다.
   const assignmentList = useSelector((state: KanbasState) =>
     state.assignments.assignments.filter(
       (assignment: Assignment) => assignment.course === courseId

@@ -41,10 +41,9 @@ function AssignmentEditor() {
   };
 
   const handleAdd = () => {
-    // Dispatch the addAssignment action with the current state
     dispatch(
       addAssignment({ ...assignment, _id: new Date().getTime().toString() })
-    ); // Assign a new ID here or in the reducer
+    );
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
   return (

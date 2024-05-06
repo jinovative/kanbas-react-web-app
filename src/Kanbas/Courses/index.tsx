@@ -9,9 +9,16 @@ import { HiMiniBars3 } from "react-icons/hi2";
 import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
 import Home from "./Home";
+import Grades from "./Grades";
+
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
-import Grades from "./Grades";
+
+import Quizzes from "./Quizzes";
+import QuizzesDetailEditor from "./Quizzes/Editor/detail";
+import QuizQuestionEditor from "./Quizzes/Editor/question";
+import Preview from "./Quizzes/Editor/preview";
+
 import "./index.css";
 
 import { useState, useEffect } from "react";
@@ -97,11 +104,22 @@ function Courses(props: any) {
             <Route path="Modules" element={<Modules />} />
             <Route path="Assignments" element={<Assignments />} />
             <Route path="Piazza" element={<h1>Piazza</h1>} />
+            <Route path="Grades" element={<Grades />} />
+            <Route path="Quizzes" element={<Quizzes />} />
             <Route
               path="Assignments/:assignmentId"
               element={<AssignmentEditor />}
             />
-            <Route path="Grades" element={<Grades />} />
+
+            <Route
+              path="Quizzes/:quizId/detail"
+              element={<QuizzesDetailEditor />}
+            />
+            <Route
+              path="Quizzes/:quizId/question"
+              element={<QuizQuestionEditor />}
+            />
+            <Route path="Quizzes/:quizId/preview" element={<Preview />} />
           </Routes>
         </div>
       </div>
